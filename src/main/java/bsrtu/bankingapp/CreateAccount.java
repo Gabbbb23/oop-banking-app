@@ -62,7 +62,7 @@ public class CreateAccount extends javax.swing.JFrame {
         ButtonMarried = new javax.swing.JRadioButton();
         ButtonWidowed = new javax.swing.JRadioButton();
         LogIn = new javax.swing.JButton();
-        Exit = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -472,44 +472,44 @@ public class CreateAccount extends javax.swing.JFrame {
         LogIn.setBackground(new java.awt.Color(204, 255, 255));
         LogIn.setFont(new java.awt.Font("Product Sans", 0, 16)); // NOI18N
         LogIn.setForeground(new java.awt.Color(0, 51, 51));
-        LogIn.setText("Log In");
+        LogIn.setText("Sign In");
         LogIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogInMouseClicked(evt);
             }
         });
-
-        Exit.setBackground(new java.awt.Color(255, 204, 204));
-        Exit.setFont(new java.awt.Font("Product Sans", 0, 16)); // NOI18N
-        Exit.setForeground(new java.awt.Color(51, 0, 0));
-        Exit.setText("Exit");
-        Exit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ExitMouseClicked(evt);
-            }
-        });
-        Exit.addActionListener(new java.awt.event.ActionListener() {
+        LogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitActionPerformed(evt);
+                LogInActionPerformed(evt);
             }
         });
+
+        jLabel1.setBackground(new java.awt.Color(0, 102, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 51));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Already have an account? Log In.");
 
         javax.swing.GroupLayout Border2Layout = new javax.swing.GroupLayout(Border2);
         Border2.setLayout(Border2Layout);
         Border2Layout.setHorizontalGroup(
             Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Border2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Border2Layout.createSequentialGroup()
-                        .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Exit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(Panel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Panel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(Border2Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         Border2Layout.setVerticalGroup(
             Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -522,10 +522,10 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addComponent(Panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addGroup(Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Exit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel1)
                 .addContainerGap())
         );
 
@@ -681,15 +681,6 @@ public class CreateAccount extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonMarriedActionPerformed
 
-    private void ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExitMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_ExitMouseClicked
-
-    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ExitActionPerformed
-
     private void UsernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusLost
         if (Username.getText().isEmpty()) {
             Username.setText("Enter Username");
@@ -747,6 +738,10 @@ public class CreateAccount extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_LogInMouseClicked
 
+    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LogInActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -797,7 +792,6 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JLabel CreateAccount;
     private javax.swing.JTextField EmailAddress;
     private javax.swing.JLabel EmailAddressLabel;
-    private javax.swing.JButton Exit;
     private javax.swing.JTextField FullName;
     private javax.swing.JLabel FullNameLabel;
     private javax.swing.JPanel Header;
@@ -815,5 +809,6 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JLabel PhoneNumberLabel;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel UsernameLabel;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
