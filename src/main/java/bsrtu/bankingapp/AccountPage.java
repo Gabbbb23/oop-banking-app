@@ -32,18 +32,20 @@ public class AccountPage extends javax.swing.JFrame {
         Border = new javax.swing.JPanel();
         MainPanel = new javax.swing.JPanel();
         CardsPanel = new javax.swing.JPanel();
-        CardsLabel = new javax.swing.JLabel();
         LinkedCards = new javax.swing.JPanel();
         LinkedCardsLabel = new javax.swing.JLabel();
-        ManageCards = new javax.swing.JButton();
+        TransferMoney1 = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        NameLabel3 = new javax.swing.JLabel();
         TransactionHistory = new javax.swing.JButton();
         BalanceBackground = new javax.swing.JPanel();
-        NameLabel = new javax.swing.JLabel();
         BalancePanel = new javax.swing.JPanel();
         BalanceLabel = new javax.swing.JLabel();
         Balance = new javax.swing.JLabel();
         TransferMoney = new javax.swing.JButton();
-        Settings = new javax.swing.JButton();
+        TransferMoney2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        NameLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -55,11 +57,6 @@ public class AccountPage extends javax.swing.JFrame {
 
         CardsPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        CardsLabel.setBackground(new java.awt.Color(153, 153, 153));
-        CardsLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        CardsLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        CardsLabel.setText("Your Debit/Credit Cards");
-
         LinkedCards.setBackground(new java.awt.Color(153, 153, 153));
         LinkedCards.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -69,31 +66,64 @@ public class AccountPage extends javax.swing.JFrame {
         LinkedCardsLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LinkedCardsLabel.setText("You have no linked cards.");
 
+        TransferMoney1.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        TransferMoney1.setForeground(new java.awt.Color(102, 102, 102));
+        TransferMoney1.setText("Manage Cards");
+        TransferMoney1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        TransferMoney1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TransferMoney1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout LinkedCardsLayout = new javax.swing.GroupLayout(LinkedCards);
         LinkedCards.setLayout(LinkedCardsLayout);
         LinkedCardsLayout.setHorizontalGroup(
             LinkedCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LinkedCardsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TransferMoney1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
             .addGroup(LinkedCardsLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(16, 16, 16)
                 .addComponent(LinkedCardsLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LinkedCardsLayout.setVerticalGroup(
             LinkedCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LinkedCardsLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(15, 15, 15)
                 .addComponent(LinkedCardsLabel)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGap(66, 66, 66)
+                .addComponent(TransferMoney1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
-        ManageCards.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        ManageCards.setText("Manage Cards");
-        ManageCards.setContentAreaFilled(false);
-        ManageCards.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ManageCardsActionPerformed(evt);
-            }
-        });
+        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        NameLabel3.setBackground(new java.awt.Color(153, 153, 153));
+        NameLabel3.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        NameLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        NameLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NameLabel3.setText("Manage Debit Cards");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NameLabel3)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(NameLabel3)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout CardsPanelLayout = new javax.swing.GroupLayout(CardsPanel);
         CardsPanel.setLayout(CardsPanelLayout);
@@ -104,18 +134,15 @@ public class AccountPage extends javax.swing.JFrame {
                 .addGroup(CardsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LinkedCards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(CardsPanelLayout.createSequentialGroup()
-                        .addComponent(CardsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ManageCards)))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         CardsPanelLayout.setVerticalGroup(
             CardsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CardsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(CardsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CardsLabel)
-                    .addComponent(ManageCards))
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LinkedCards, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -127,11 +154,6 @@ public class AccountPage extends javax.swing.JFrame {
         TransactionHistory.setText("Transaction History");
 
         BalanceBackground.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        NameLabel.setBackground(new java.awt.Color(153, 153, 153));
-        NameLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        NameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        NameLabel.setText("Welcome, Placeholder Name");
 
         BalancePanel.setBackground(new java.awt.Color(102, 153, 255));
         BalancePanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -146,11 +168,11 @@ public class AccountPage extends javax.swing.JFrame {
         Balance.setFont(new java.awt.Font("Product Sans", 1, 36)); // NOI18N
         Balance.setForeground(new java.awt.Color(255, 255, 255));
         Balance.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Balance.setText("$35.00");
+        Balance.setText("₱35.00");
 
         TransferMoney.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         TransferMoney.setForeground(new java.awt.Color(102, 153, 255));
-        TransferMoney.setText("Transfer Money");
+        TransferMoney.setText("Send Money");
         TransferMoney.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         TransferMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,9 +192,9 @@ public class AccountPage extends javax.swing.JFrame {
                     .addGroup(BalancePanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(BalancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BalanceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Balance, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(Balance, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BalanceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 141, Short.MAX_VALUE)))
                 .addGap(20, 20, 20))
         );
         BalancePanelLayout.setVerticalGroup(
@@ -187,21 +209,35 @@ public class AccountPage extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        Settings.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        Settings.setText(" Settings ");
-        Settings.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        Settings.setContentAreaFilled(false);
-        Settings.setOpaque(true);
-        Settings.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SettingsMouseClicked(evt);
-            }
-        });
-        Settings.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SettingsActionPerformed(evt);
-            }
-        });
+        TransferMoney2.setFont(new java.awt.Font("Product Sans", 1, 12)); // NOI18N
+        TransferMoney2.setText("Settings");
+        TransferMoney2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        NameLabel.setBackground(new java.awt.Color(153, 153, 153));
+        NameLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        NameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        NameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        NameLabel.setText("Welcome, Placeholder Name");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NameLabel)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(NameLabel)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout BalanceBackgroundLayout = new javax.swing.GroupLayout(BalanceBackground);
         BalanceBackground.setLayout(BalanceBackgroundLayout);
@@ -211,9 +247,9 @@ public class AccountPage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(BalanceBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BalanceBackgroundLayout.createSequentialGroup()
-                        .addComponent(NameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
-                        .addGap(61, 61, 61)
-                        .addComponent(Settings))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TransferMoney2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(BalancePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -221,9 +257,9 @@ public class AccountPage extends javax.swing.JFrame {
             BalanceBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BalanceBackgroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(BalanceBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Settings, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NameLabel))
+                .addGroup(BalanceBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TransferMoney2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BalancePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -290,24 +326,13 @@ public class AccountPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ManageCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageCardsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ManageCardsActionPerformed
-
     private void TransferMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferMoneyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TransferMoneyActionPerformed
 
-    private void SettingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SettingsMouseClicked
-        Settings settings = new Settings();
-        settings.setVisible(true);
-        settings.setLocationRelativeTo(null);
-        dispose();
-    }//GEN-LAST:event_SettingsMouseClicked
-
-    private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsActionPerformed
+    private void TransferMoney1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferMoney1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SettingsActionPerformed
+    }//GEN-LAST:event_TransferMoney1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,15 +375,17 @@ public class AccountPage extends javax.swing.JFrame {
     private javax.swing.JLabel BalanceLabel;
     private javax.swing.JPanel BalancePanel;
     private javax.swing.JPanel Border;
-    private javax.swing.JLabel CardsLabel;
     private javax.swing.JPanel CardsPanel;
     private javax.swing.JPanel LinkedCards;
     private javax.swing.JLabel LinkedCardsLabel;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JButton ManageCards;
     private javax.swing.JLabel NameLabel;
-    private javax.swing.JButton Settings;
+    private javax.swing.JLabel NameLabel3;
     private javax.swing.JButton TransactionHistory;
     private javax.swing.JButton TransferMoney;
+    private javax.swing.JButton TransferMoney1;
+    private javax.swing.JButton TransferMoney2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }
