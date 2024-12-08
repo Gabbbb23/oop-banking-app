@@ -11,14 +11,14 @@ import javax.swing.SwingUtilities;
 
 /**
  *
- * @author Gab
+ * @author Temporary User
  */
-public class EnterPin extends javax.swing.JFrame {
+public class CreatePIN extends javax.swing.JFrame {
 
     /**
-     * Creates new form EnterPin
+     * Creates new form CreatePIN
      */
-    public EnterPin() {
+    public CreatePIN() {
         this.setBackground(new Color(0,0,0,0));
         initComponents();
     }
@@ -75,7 +75,6 @@ public class EnterPin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -89,20 +88,22 @@ public class EnterPin extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setFocusable(false);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel3.setFocusable(false);
 
         jPanel2.setBackground(java.awt.Color.white);
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel2.setFocusable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setFocusable(false);
 
         jPanel4.setBackground(new java.awt.Color(153, 153, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel4.setFocusable(false);
 
         PIN1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         PIN1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -110,6 +111,11 @@ public class EnterPin extends javax.swing.JFrame {
         PIN1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PIN1ActionPerformed(evt);
+            }
+        });
+        PIN1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                PIN1KeyTyped(evt);
             }
         });
 
@@ -159,11 +165,13 @@ public class EnterPin extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel5.setFocusable(false);
 
         TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
         TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         TransactionHistory.setForeground(new java.awt.Color(0, 51, 51));
         TransactionHistory.setText("> Back");
+        TransactionHistory.setFocusable(false);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -184,10 +192,11 @@ public class EnterPin extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel6.setFocusable(false);
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Enter PIN");
+        jLabel1.setText("Create PIN");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -289,13 +298,17 @@ public class EnterPin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void PIN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PIN1ActionPerformed
+
     private void PIN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIN3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PIN3ActionPerformed
 
-    private void PIN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIN1ActionPerformed
+    private void PIN1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PIN1KeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_PIN1ActionPerformed
+    }//GEN-LAST:event_PIN1KeyTyped
 
     /**
      * @param args the command line arguments
@@ -314,20 +327,20 @@ public class EnterPin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EnterPin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreatePIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EnterPin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreatePIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EnterPin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreatePIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EnterPin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreatePIN.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EnterPin().setVisible(true);
+                new CreatePIN().setVisible(true);
             }
         });
     }
@@ -338,7 +351,6 @@ public class EnterPin extends javax.swing.JFrame {
     private javax.swing.JPasswordField PIN3;
     private javax.swing.JPasswordField PIN4;
     private javax.swing.JButton TransactionHistory;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
