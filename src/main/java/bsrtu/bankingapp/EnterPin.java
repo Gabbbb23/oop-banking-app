@@ -4,10 +4,15 @@
  */
 package bsrtu.bankingapp;
 
+import com.opencsv.exceptions.CsvException;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  *
@@ -19,8 +24,54 @@ public class EnterPin extends javax.swing.JFrame {
      * Creates new form EnterPin
      */
     public EnterPin() {
-        this.setBackground(new Color(0,0,0,0));
         initComponents();
+        this.setBackground(new Color(0,0,0,0));
+        addDocumentListener(PIN1);
+        addDocumentListener(PIN2);
+        addDocumentListener(PIN3);
+        addDocumentListener(PIN4);
+    }
+    
+    private void addDocumentListener(javax.swing.JPasswordField passwordField) {
+        passwordField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                checkAndSetPIN();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                checkAndSetPIN();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                checkAndSetPIN();
+            }
+        });
+    }
+    
+    private void checkAndSetPIN() {
+        String pin1 = new String(PIN1.getPassword());
+        String pin2 = new String(PIN2.getPassword());
+        String pin3 = new String(PIN3.getPassword());
+        String pin4 = new String(PIN4.getPassword());
+
+        if (!pin1.isEmpty() && !pin2.isEmpty() && !pin3.isEmpty() && !pin4.isEmpty()) {
+            String fullPIN = pin1 + pin2 + pin3 + pin4;
+            try {
+                if (UserValidator.validatePin(fullPIN)) {
+                    AccountPage accountPage = new AccountPage();
+                    accountPage.setVisible(true);
+                    accountPage.setLocationRelativeTo(null);
+                    dispose();
+                } else {
+                    JOptionPane.showMessageDialog(EnterPin.this, "Incorrect PIN.");
+                }
+            } catch (IOException | CsvException ex) {
+                JOptionPane.showMessageDialog(EnterPin.this, "Error reading CSV file: " + ex.getMessage());
+            }
+        }
     }
     
     private void configurePINFields() {

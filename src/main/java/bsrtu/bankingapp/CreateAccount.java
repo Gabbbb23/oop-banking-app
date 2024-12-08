@@ -785,7 +785,11 @@ public class CreateAccount extends javax.swing.JFrame {
         if(areFieldsValid()){
             try {
                 addUserToCSV();
-                JOptionPane.showMessageDialog(CreateAccount.this, "User details added successfully.");
+                CreatePIN createPin = new CreatePIN();
+                createPin.setVisible(true);
+                createPin.setLocationRelativeTo(null);
+                dispose();
+                // JOptionPane.showMessageDialog(CreateAccount.this, "User details added successfully.");
             } catch (IOException ex) {
                 JOptionPane.showMessageDialog(CreateAccount.this, "Error writing to CSV file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
@@ -894,7 +898,7 @@ public class CreateAccount extends javax.swing.JFrame {
         File file = new File(resource.getFile());
         try (FileWriter fw = new FileWriter(file, true);
              PrintWriter pw = new PrintWriter(fw)) {
-            pw.printf("%s,%s,%d,%s,%s,%s,%s,%s,%s,%s%n",
+            pw.printf("%s,%s,%d,%s,%s,%s,%s,%s,%s,%s,",
                     username, password, balance, fullName, age, birthday, nationality, phoneNumber, email, homeAddress);
         }
     }

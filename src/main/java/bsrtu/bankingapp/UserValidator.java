@@ -34,4 +34,21 @@ public class UserValidator {
         }
         return false;
     }
+    
+    public static boolean validatePin(String PIN) throws IOException, CsvException {
+        InputStream inputStream = UserValidator.class.getResourceAsStream("/users.csv");
+        if (inputStream == null) {
+            throw new IOException("CSV file not found");
+        }
+        
+        try (CSVReader reader = new CSVReader(new InputStreamReader(inputStream))) {
+            List<String[]> records = reader.readAll();
+            for (String[] record : records) {
+                if (record[10].equals(PIN)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }

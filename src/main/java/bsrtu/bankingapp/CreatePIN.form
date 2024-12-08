@@ -4,6 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="focusable" type="boolean" value="false"/>
+    <Property name="undecorated" type="boolean" value="true"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -49,7 +50,6 @@
             <EtchetBorder/>
           </Border>
         </Property>
-        <Property name="focusable" type="boolean" value="false"/>
       </Properties>
 
       <Layout>
@@ -83,7 +83,6 @@
                 <EtchetBorder/>
               </Border>
             </Property>
-            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
 
           <Layout>
@@ -114,7 +113,6 @@
                     <EtchetBorder/>
                   </Border>
                 </Property>
-                <Property name="focusable" type="boolean" value="false"/>
               </Properties>
 
               <Layout>
@@ -164,7 +162,6 @@
                         <EtchetBorder/>
                       </Border>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
 
                   <Layout>
@@ -270,7 +267,6 @@
                         <EtchetBorder/>
                       </Border>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
 
                   <Layout>
@@ -321,7 +317,6 @@
                         <EtchetBorder/>
                       </Border>
                     </Property>
-                    <Property name="focusable" type="boolean" value="false"/>
                   </Properties>
 
                   <Layout>

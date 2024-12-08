@@ -7,20 +7,87 @@ package bsrtu.bankingapp;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URL;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  *
  * @author Temporary User
  */
 public class CreatePIN extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form CreatePIN
      */
     public CreatePIN() {
-        this.setBackground(new Color(0,0,0,0));
         initComponents();
+        this.setBackground(new Color(0,0,0,0));
+        // LISTENER FOR PINS
+        addDocumentListener(PIN1);
+        addDocumentListener(PIN2);
+        addDocumentListener(PIN3);
+        addDocumentListener(PIN4);
+    }
+    
+    // CODE FOR LISTENING TO CHANGES
+    private void addDocumentListener(javax.swing.JPasswordField passwordField) {
+        passwordField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                checkAndSetPIN();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                checkAndSetPIN();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                checkAndSetPIN();
+            }
+        });
+    }
+    
+    // IF ALL PASSWORDFIELDS HAVE A NUMBER, DO ALL THIS
+    private void checkAndSetPIN() {
+        String pin1 = new String(PIN1.getPassword());
+        String pin2 = new String(PIN2.getPassword());
+        String pin3 = new String(PIN3.getPassword());
+        String pin4 = new String(PIN4.getPassword());
+
+        if (!pin1.isEmpty() && !pin2.isEmpty() && !pin3.isEmpty() && !pin4.isEmpty()) {
+            String fullPIN = pin1 + pin2 + pin3 + pin4;
+            try {
+                addPinToCSV(fullPIN);
+                LoginPage loginPage = new LoginPage();
+                loginPage.setVisible(true);
+                loginPage.setLocationRelativeTo(null);
+                dispose();
+                JOptionPane.showMessageDialog(CreatePIN.this, "User details added successfully.");
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(CreatePIN.this, "Error writing to CSV file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+    
+    private void addPinToCSV(String PIN) throws IOException {
+        URL resource = getClass().getClassLoader().getResource("users.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+        File file = new File(resource.getFile());
+        try (FileWriter fw = new FileWriter(file, true);
+             PrintWriter pw = new PrintWriter(fw)) {
+            pw.printf("%s%n", PIN);
+        }
     }
     
     private void configurePINFields() {
@@ -90,20 +157,17 @@ public class CreatePIN extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
+        setUndecorated(true);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel3.setFocusable(false);
 
         jPanel2.setBackground(java.awt.Color.white);
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel2.setFocusable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.setFocusable(false);
 
         jPanel4.setBackground(new java.awt.Color(153, 153, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel4.setFocusable(false);
 
         PIN1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         PIN1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -165,7 +229,6 @@ public class CreatePIN extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel5.setFocusable(false);
 
         TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
         TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
@@ -192,7 +255,6 @@ public class CreatePIN extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel6.setFocusable(false);
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

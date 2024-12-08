@@ -16,8 +16,8 @@ public class ManageCards extends javax.swing.JFrame {
      * Creates new form ManageCards
      */
     public ManageCards() {
-        this.setBackground(new Color(0,0,0,0));
         initComponents();
+        this.setBackground(new Color(0,0,0,0));
     }
 
     /**
