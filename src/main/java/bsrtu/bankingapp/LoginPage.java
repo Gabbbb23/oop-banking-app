@@ -2,7 +2,11 @@ package bsrtu.bankingapp;
 
 import java.awt.Color;
 import java.awt.Insets;
-
+import javax.swing.*;
+import com.opencsv.exceptions.CsvException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class LoginPage extends javax.swing.JFrame {
     
@@ -311,15 +315,24 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_PasswordFocusGained
 
     private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
-        // TODO add your handling code here:
+        String username = Username.getText();
+        String password = new String(Password.getPassword());
+        try {
+            if (UserValidator.validateLogin(username, password)) {
+                AccountPage accountPage = new AccountPage();
+                accountPage.setVisible(true);
+                accountPage.setLocationRelativeTo(null);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(LoginPage.this, "Invalid username or password.");
+            }
+        } catch (IOException | CsvException ex) {
+            JOptionPane.showMessageDialog(LoginPage.this, "Error reading CSV file: " + ex.getMessage());
+        }
     }//GEN-LAST:event_LogInActionPerformed
 
     private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
         // TODO add your handling code here:
-        AccountPage accountPage = new AccountPage();
-            accountPage.setVisible(true);
-            accountPage.setLocationRelativeTo(null);
-        dispose();
     }//GEN-LAST:event_LogInMouseClicked
 
     private void UsernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_UsernameFocusLost

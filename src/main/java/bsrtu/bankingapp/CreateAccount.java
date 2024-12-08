@@ -3,6 +3,13 @@ package bsrtu.bankingapp;
 import java.awt.Color;
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URL;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -19,6 +26,9 @@ public class CreateAccount extends javax.swing.JFrame {
      */
     public CreateAccount() {
         initComponents();
+        for (int year = 1900; year <= 2010; year++) {
+            BirthdayYear.addItem(year);
+        }
         this.setBackground(new Color(0,0,0,0));
     }
 
@@ -63,8 +73,8 @@ public class CreateAccount extends javax.swing.JFrame {
         ButtonSingle = new javax.swing.JRadioButton();
         ButtonMarried = new javax.swing.JRadioButton();
         ButtonWidowed = new javax.swing.JRadioButton();
-        LogIn = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        SignIn = new javax.swing.JButton();
+        LogIn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -136,8 +146,6 @@ public class CreateAccount extends javax.swing.JFrame {
         UsernameLabel1.setText("Password:");
 
         Password.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        Password.setForeground(new java.awt.Color(153, 153, 153));
-        Password.setText("Password");
         Password.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 PasswordFocusGained(evt);
@@ -233,14 +241,25 @@ public class CreateAccount extends javax.swing.JFrame {
         NationalityLabel.setText("Nationality : ");
 
         BirthdayDay.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        BirthdayDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        BirthdayDay.setMaximumRowCount(10);
 
         BirthdayMonth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        BirthdayMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        BirthdayMonth.setMaximumRowCount(10);
+        BirthdayMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        BirthdayMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BirthdayMonthActionPerformed(evt);
+            }
+        });
 
         BirthdayYear.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        BirthdayYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        BirthdayYear.setMaximumRowCount(10);
         BirthdayYear.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        BirthdayYear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BirthdayYearActionPerformed(evt);
+            }
+        });
 
         ((AbstractDocument) PhoneNumber.getDocument()).setDocumentFilter(new LimitedDocumentFilter(11));
         PhoneNumber.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
@@ -492,26 +511,31 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        LogIn.setBackground(new java.awt.Color(204, 255, 255));
-        LogIn.setFont(new java.awt.Font("Product Sans", 0, 16)); // NOI18N
-        LogIn.setForeground(new java.awt.Color(0, 51, 51));
-        LogIn.setText("Sign In");
+        SignIn.setBackground(new java.awt.Color(204, 255, 255));
+        SignIn.setFont(new java.awt.Font("Product Sans", 0, 16)); // NOI18N
+        SignIn.setForeground(new java.awt.Color(0, 51, 51));
+        SignIn.setText("Sign In");
+        SignIn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SignInMouseClicked(evt);
+            }
+        });
+        SignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignInActionPerformed(evt);
+            }
+        });
+
+        LogIn.setBackground(new java.awt.Color(0, 102, 0));
+        LogIn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LogIn.setForeground(new java.awt.Color(0, 102, 51));
+        LogIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LogIn.setText("Already have an account? Log In.");
         LogIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LogInMouseClicked(evt);
             }
         });
-        LogIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LogInActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setBackground(new java.awt.Color(0, 102, 0));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 51));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Already have an account? Log In.");
 
         javax.swing.GroupLayout Border2Layout = new javax.swing.GroupLayout(Border2);
         Border2.setLayout(Border2Layout);
@@ -527,11 +551,11 @@ public class CreateAccount extends javax.swing.JFrame {
                             .addComponent(Panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LogIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(Border2Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
-                .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Border2Layout.setVerticalGroup(
@@ -546,9 +570,9 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
-                .addComponent(jLabel1)
+                .addComponent(LogIn)
                 .addContainerGap())
         );
 
@@ -753,36 +777,187 @@ public class CreateAccount extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_HomeAddressFocusLost
 
-    private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
-        AccountPage accountPage = new AccountPage();
-            accountPage.setVisible(true);
-            accountPage.setLocationRelativeTo(null);
-            
-        dispose();
-    }//GEN-LAST:event_LogInMouseClicked
+    private void SignInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignInMouseClicked
+        
+    }//GEN-LAST:event_SignInMouseClicked
 
-    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LogInActionPerformed
+    private void SignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignInActionPerformed
+        if(areFieldsValid()){
+            try {
+                addUserToCSV();
+                JOptionPane.showMessageDialog(CreateAccount.this, "User details added successfully.");
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(CreateAccount.this, "Error writing to CSV file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_SignInActionPerformed
 
     private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
         // TODO add your handling code here:
-        if (new String(Password.getPassword()).equals("Password") && Password.getEchoChar() != '\u2022'){
-            Password.setText("");
-            Password.setForeground(new java.awt.Color(0, 0, 0));
-            Password.setEchoChar('\u2022');
-        }
     }//GEN-LAST:event_PasswordFocusGained
 
     private void PasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusLost
         // TODO add your handling code here:
-        if (Password.getPassword().length == 0 && Password.getEchoChar() == '\u2022'){
-            Password.setText("Password");
-            Password.setForeground(new java.awt.Color(153, 153, 153));
-            Password.setEchoChar((char) 0);
-        }
     }//GEN-LAST:event_PasswordFocusLost
 
+    private void LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogInMouseClicked
+        LoginPage loginPage = new LoginPage();
+        loginPage.setVisible(true);
+        loginPage.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_LogInMouseClicked
+
+    private void BirthdayMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirthdayMonthActionPerformed
+        updateDays();
+    }//GEN-LAST:event_BirthdayMonthActionPerformed
+
+    private void BirthdayYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BirthdayYearActionPerformed
+        updateDays();
+    }//GEN-LAST:event_BirthdayYearActionPerformed
+    
+    private boolean areFieldsValid() {
+        Color expectedColor = new Color(153, 153, 153);
+      
+        if (Username.getForeground().equals(expectedColor)) {
+            showError("Username is required.");
+            return false;
+        }
+        if (new String(Password.getPassword()).isEmpty()) {
+            showError("Password is required.");
+            return false;
+        }
+        if(FullName.getForeground().equals(expectedColor)){
+            showError("Full Name is required.");
+            return false;
+        }
+        if(isValidFullName(FullName.getText())){
+            showError("Invalid Full Name Format.");
+            return false;
+        }
+        if (Age.getForeground().equals(expectedColor)) {
+            showError("Age is required.");
+            return false;
+        }
+        if (Nationality.getForeground().equals(expectedColor)) {
+            showError("Nationality is required.");
+            return false;
+        }
+        if (PhoneNumber.getForeground().equals(expectedColor)) {
+            showError("Phone Number is required.");
+            return false;
+        }
+        if(PhoneNumber.getText().length() != 11 || PhoneNumber.getText().startsWith("09")){
+            showError("Phone Number is Invalid.");
+            return false;
+        }
+        if (EmailAddress.getForeground().equals(expectedColor) || !isValidEmail(EmailAddress.getText())) {
+            showError("A valid Email Address is required.");
+            return false;
+        }
+        if (HomeAddress.getForeground().equals(expectedColor)) {
+            showError("Home Address is required.");
+            return false;
+        }
+        if (!ButtonSingle.isSelected() && !ButtonMarried.isSelected() && !ButtonWidowed.isSelected()) {
+            showError("Marital Status is required.");
+            return false;
+        }
+        return true;
+    }
+    
+    private boolean isValidFullName(String fullName) {
+        String fullNameRegex = "^[a-zA-Z]+,\\s[a-zA-Z]+,\\s[a-zA-Z]\\.I\\.$";
+        Pattern pattern = Pattern.compile(fullNameRegex);
+        Matcher matcher = pattern.matcher(fullName);
+        return matcher.matches();
+    }
+    
+    private void addUserToCSV() throws IOException {
+        String username = Username.getText();
+        String password = new String(Password.getPassword());
+        int balance = 0;
+        String fullName = FullName.getText();
+        String age = Age.getText();
+        String birthday = String.format("%02d / %02d / %04d",
+                BirthdayMonth.getSelectedIndex() + 1,
+                (int) BirthdayDay.getSelectedItem(),
+                (int) BirthdayYear.getSelectedItem());
+        String nationality = Nationality.getText();
+        String phoneNumber = PhoneNumber.getText();
+        String email = EmailAddress.getText();
+        String homeAddress = HomeAddress.getText();
+        
+        URL resource = getClass().getClassLoader().getResource("users.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+        File file = new File(resource.getFile());
+        try (FileWriter fw = new FileWriter(file, true);
+             PrintWriter pw = new PrintWriter(fw)) {
+            pw.printf("%s,%s,%d,%s,%s,%s,%s,%s,%s,%s%n",
+                    username, password, balance, fullName, age, birthday, nationality, phoneNumber, email, homeAddress);
+        }
+    }
+
+    private void showError(String message) {
+        JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+    
+    private void updateDays() {
+        int selectedMonth = BirthdayMonth.getSelectedIndex();
+        int selectedYear = (int) BirthdayYear.getSelectedItem();
+
+        int daysInMonth = getDaysInMonth(selectedMonth, selectedYear);
+
+        BirthdayDay.removeAllItems();
+        for (int day = 1; day <= daysInMonth; day++) {
+            BirthdayDay.addItem(day);
+        }
+    }
+
+    private int getDaysInMonth(int month, int year) {
+        switch (month) {
+            case 0: // January
+            case 2: // March
+            case 4: // May
+            case 6: // July
+            case 7: // August
+            case 9: // October
+            case 11: // December
+                return 31;
+            case 3: // April
+            case 5: // June
+            case 8: // September
+            case 10: // November
+                return 30;
+            case 1: // February
+                if (isLeapYear(year)) {
+                    return 29;
+                } else {
+                    return 28;
+                }
+            default:
+                throw new IllegalArgumentException("Invalid month: " + month);
+        }
+    }
+
+    private boolean isLeapYear(int year) {
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                return year % 400 == 0;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
     /**
      * @param args the command line arguments
      */
@@ -821,10 +996,10 @@ public class CreateAccount extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Age;
     private javax.swing.JLabel AgeLabel;
-    private javax.swing.JComboBox<String> BirthdayDay;
+    private javax.swing.JComboBox<Integer> BirthdayDay;
     private javax.swing.JLabel BirthdayLabel;
     private javax.swing.JComboBox<String> BirthdayMonth;
-    private javax.swing.JComboBox<String> BirthdayYear;
+    private javax.swing.JComboBox<Integer> BirthdayYear;
     private javax.swing.JPanel Border1;
     private javax.swing.JPanel Border2;
     private javax.swing.JRadioButton ButtonMarried;
@@ -838,7 +1013,7 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JPanel Header;
     private javax.swing.JTextField HomeAddress;
     private javax.swing.JLabel HomeAddressLabel;
-    private javax.swing.JButton LogIn;
+    private javax.swing.JLabel LogIn;
     private javax.swing.ButtonGroup MaritalStatusButtons;
     private javax.swing.JLabel MaritalStatusLabel;
     private javax.swing.JTextField Nationality;
@@ -849,9 +1024,9 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JPasswordField Password;
     private javax.swing.JTextField PhoneNumber;
     private javax.swing.JLabel PhoneNumberLabel;
+    private javax.swing.JButton SignIn;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel UsernameLabel1;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
