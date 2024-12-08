@@ -38,9 +38,9 @@ public class CreateAccount extends javax.swing.JFrame {
         CreateAccount = new javax.swing.JLabel();
         Panel1 = new javax.swing.JPanel();
         Username = new javax.swing.JTextField();
-        FullName = new javax.swing.JTextField();
         UsernameLabel = new javax.swing.JLabel();
-        FullNameLabel = new javax.swing.JLabel();
+        UsernameLabel1 = new javax.swing.JLabel();
+        Password = new javax.swing.JPasswordField();
         Panel2 = new javax.swing.JPanel();
         Age = new javax.swing.JTextField();
         Nationality = new javax.swing.JTextField();
@@ -52,6 +52,8 @@ public class CreateAccount extends javax.swing.JFrame {
         PhoneNumber = new javax.swing.JTextField();
         PhoneNumberLabel = new javax.swing.JLabel();
         BirthdayLabel = new javax.swing.JLabel();
+        FullNameLabel = new javax.swing.JLabel();
+        FullName = new javax.swing.JTextField();
         Panel3 = new javax.swing.JPanel();
         EmailAddress = new javax.swing.JTextField();
         HomeAddress = new javax.swing.JTextField();
@@ -86,7 +88,7 @@ public class CreateAccount extends javax.swing.JFrame {
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(CreateAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -123,37 +125,27 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
 
-        FullName.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        FullName.setForeground(new java.awt.Color(153, 153, 153));
-        FullName.setText("Enter Full Name");
-        FullName.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                FullNameFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                FullNameFocusLost(evt);
-            }
-        });
-        FullName.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                FullNameMouseClicked(evt);
-            }
-        });
-        FullName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FullNameActionPerformed(evt);
-            }
-        });
-
         UsernameLabel.setBackground(new java.awt.Color(153, 153, 153));
         UsernameLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         UsernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         UsernameLabel.setText("Username (20 Characters) :");
 
-        FullNameLabel.setBackground(new java.awt.Color(153, 153, 153));
-        FullNameLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        FullNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        FullNameLabel.setText("Full Name (Last Name, First Name M.I.) :");
+        UsernameLabel1.setBackground(new java.awt.Color(153, 153, 153));
+        UsernameLabel1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        UsernameLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        UsernameLabel1.setText("Password:");
+
+        Password.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Password.setForeground(new java.awt.Color(153, 153, 153));
+        Password.setText("Password");
+        Password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                PasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                PasswordFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout Panel1Layout = new javax.swing.GroupLayout(Panel1);
         Panel1.setLayout(Panel1Layout);
@@ -161,16 +153,12 @@ public class CreateAccount extends javax.swing.JFrame {
             Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(UsernameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel1Layout.createSequentialGroup()
-                        .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(FullName)
-                            .addComponent(Username))
-                        .addContainerGap())
-                    .addGroup(Panel1Layout.createSequentialGroup()
-                        .addComponent(FullNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addGroup(Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Password, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(UsernameLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(UsernameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Username))
+                .addContainerGap())
         );
         Panel1Layout.setVerticalGroup(
             Panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,9 +168,9 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FullNameLabel)
+                .addComponent(UsernameLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FullName, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Password, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -287,6 +275,33 @@ public class CreateAccount extends javax.swing.JFrame {
         BirthdayLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BirthdayLabel.setText("Birthdate (MM/DD/YY) : ");
 
+        FullNameLabel.setBackground(new java.awt.Color(153, 153, 153));
+        FullNameLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        FullNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        FullNameLabel.setText("Full Name (Last Name, First Name M.I.) :");
+
+        FullName.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        FullName.setForeground(new java.awt.Color(153, 153, 153));
+        FullName.setText("Enter Full Name");
+        FullName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                FullNameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                FullNameFocusLost(evt);
+            }
+        });
+        FullName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FullNameMouseClicked(evt);
+            }
+        });
+        FullName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FullNameActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Panel2Layout = new javax.swing.GroupLayout(Panel2);
         Panel2.setLayout(Panel2Layout);
         Panel2Layout.setHorizontalGroup(
@@ -313,13 +328,21 @@ public class CreateAccount extends javax.swing.JFrame {
                     .addGroup(Panel2Layout.createSequentialGroup()
                         .addComponent(AgeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BirthdayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(BirthdayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(Panel2Layout.createSequentialGroup()
+                        .addComponent(FullNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62))
+                    .addComponent(FullName, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         Panel2Layout.setVerticalGroup(
             Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel2Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(FullNameLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FullName, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addGroup(Panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgeLabel)
                     .addComponent(BirthdayLabel))
@@ -509,7 +532,7 @@ public class CreateAccount extends javax.swing.JFrame {
             .addGroup(Border2Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
                 .addComponent(LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Border2Layout.setVerticalGroup(
             Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -742,6 +765,24 @@ public class CreateAccount extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_LogInActionPerformed
 
+    private void PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusGained
+        // TODO add your handling code here:
+        if (new String(Password.getPassword()).equals("Password") && Password.getEchoChar() != '\u2022'){
+            Password.setText("");
+            Password.setForeground(new java.awt.Color(0, 0, 0));
+            Password.setEchoChar('\u2022');
+        }
+    }//GEN-LAST:event_PasswordFocusGained
+
+    private void PasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_PasswordFocusLost
+        // TODO add your handling code here:
+        if (Password.getPassword().length == 0 && Password.getEchoChar() == '\u2022'){
+            Password.setText("Password");
+            Password.setForeground(new java.awt.Color(153, 153, 153));
+            Password.setEchoChar((char) 0);
+        }
+    }//GEN-LAST:event_PasswordFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -805,10 +846,12 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JPanel Panel1;
     private javax.swing.JPanel Panel2;
     private javax.swing.JPanel Panel3;
+    private javax.swing.JPasswordField Password;
     private javax.swing.JTextField PhoneNumber;
     private javax.swing.JLabel PhoneNumberLabel;
     private javax.swing.JTextField Username;
     private javax.swing.JLabel UsernameLabel;
+    private javax.swing.JLabel UsernameLabel1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
