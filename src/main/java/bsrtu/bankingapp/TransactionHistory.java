@@ -4,6 +4,8 @@
  */
 package bsrtu.bankingapp;
 
+import java.awt.Color;
+
 /**
  *
  * @author Gab
@@ -14,6 +16,7 @@ public class TransactionHistory extends javax.swing.JFrame {
      * Creates new form TransactionHistory
      */
     public TransactionHistory() {
+        this.setBackground(new Color(0,0,0,0));
         initComponents();
     }
 
