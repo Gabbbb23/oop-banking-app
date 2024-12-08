@@ -16,8 +16,8 @@ public class AddCard extends javax.swing.JFrame {
      * Creates new form AddCard
      */
     public AddCard() {
-        this.setBackground(new Color(0,0,0,0));
         initComponents();
+        this.setBackground(new Color(0,0,0,0));
     }
 
     /**

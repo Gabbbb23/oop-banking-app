@@ -16,8 +16,8 @@ public class WithdrawMoney extends javax.swing.JFrame {
      * Creates new form WithdrawMoney
      */
     public WithdrawMoney() {
-        this.setBackground(new Color(0,0,0,0));
         initComponents();
+        this.setBackground(new Color(0,0,0,0));
     }
 
     /**

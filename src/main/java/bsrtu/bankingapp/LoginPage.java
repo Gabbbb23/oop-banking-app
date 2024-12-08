@@ -5,8 +5,6 @@ import java.awt.Insets;
 import javax.swing.*;
 import com.opencsv.exceptions.CsvException;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 public class LoginPage extends javax.swing.JFrame {
     
@@ -319,9 +317,9 @@ public class LoginPage extends javax.swing.JFrame {
         String password = new String(Password.getPassword());
         try {
             if (UserValidator.validateLogin(username, password)) {
-                AccountPage accountPage = new AccountPage();
-                accountPage.setVisible(true);
-                accountPage.setLocationRelativeTo(null);
+                EnterPin enterPin = new EnterPin();
+                enterPin.setVisible(true);
+                enterPin.setLocationRelativeTo(null);
                 dispose();
             } else {
                 JOptionPane.showMessageDialog(LoginPage.this, "Invalid username or password.");
