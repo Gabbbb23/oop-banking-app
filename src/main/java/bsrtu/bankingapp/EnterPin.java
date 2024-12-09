@@ -10,7 +10,6 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -22,14 +21,24 @@ public class EnterPin extends javax.swing.JFrame {
 
     /**
      * Creates new form EnterPin
+     * 
      */
-    public EnterPin() {
+    private PinAction pinAction;
+    private String sourcePage;
+    
+    public EnterPin(String sourcePage) {
         initComponents();
+        this.sourcePage = sourcePage; 
         this.setBackground(new Color(0,0,0,0));
         addDocumentListener(PIN1);
         addDocumentListener(PIN2);
         addDocumentListener(PIN3);
         addDocumentListener(PIN4);
+        
+        addKeyListenerToField(PIN1, PIN2, null);
+        addKeyListenerToField(PIN2, PIN3, PIN1);
+        addKeyListenerToField(PIN3, PIN4, PIN2);
+        addKeyListenerToField(PIN4, null, PIN3);
     }
     
     private void addDocumentListener(javax.swing.JPasswordField passwordField) {
@@ -61,9 +70,13 @@ public class EnterPin extends javax.swing.JFrame {
             String fullPIN = pin1 + pin2 + pin3 + pin4;
             try {
                 if (UserValidator.validatePin(fullPIN)) {
-                    AccountPage accountPage = new AccountPage();
-                    accountPage.setVisible(true);
-                    accountPage.setLocationRelativeTo(null);
+                    
+                    if ("LoginPage".equals(sourcePage)) {
+                        pinAction = new PinAction.LoginPinAction();
+                    } else if ("AccountPage".equals(sourcePage)) {
+                        pinAction = new PinAction.SettingsPinAction();
+                    }
+                    pinAction.onPinValidated();
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(EnterPin.this, "Incorrect PIN.");
@@ -74,42 +87,31 @@ public class EnterPin extends javax.swing.JFrame {
         }
     }
     
-    private void configurePINFields() {
-        setupPINField(PIN1, null, PIN2);
-        setupPINField(PIN2, PIN1, PIN3);
-        setupPINField(PIN3, PIN2, PIN4);
-        setupPINField(PIN4, PIN3, null);
-    }
     
-    private void setupPINField(javax.swing.JPasswordField currentField, javax.swing.JPasswordField previousField, javax.swing.JPasswordField nextField) {
+    private void addKeyListenerToField(javax.swing.JPasswordField currentField, 
+                                       javax.swing.JPasswordField nextField, 
+                                       javax.swing.JPasswordField previousField) {
         currentField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
-                // Allow only digits
+
+                // Allow only digits to be entered
                 if (!Character.isDigit(c)) {
-                    e.consume();
-                    return;
+                    e.consume(); // Ignore the non-digit input
                 }
 
-                // Limit input length to 1 character
-                if (currentField.getPassword().length >= 1) {
-                    e.consume();
-                } else {
-                    // Automatically move to the next field
-                    SwingUtilities.invokeLater(() -> {
-                        if (nextField != null) {
-                            nextField.requestFocus();
-                        }
-                    });
+                // Move focus to the next field if the current field is filled
+                if (Character.isDigit(c) && currentField.getPassword().length == 1 && nextField != null) {
+                    nextField.requestFocus();
                 }
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
-                // Backspace handling
-                if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE && currentField.getPassword().length == 0) {
-                    if (previousField != null) {
+                if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                    // If backspace is pressed and the current field is empty, move focus to the previous field
+                    if (currentField.getPassword().length == 0 && previousField != null) {
                         previousField.requestFocus();
                     }
                 }
@@ -378,7 +380,6 @@ public class EnterPin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EnterPin().setVisible(true);
             }
         });
     }

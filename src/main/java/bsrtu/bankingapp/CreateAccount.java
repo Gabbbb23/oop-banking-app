@@ -850,7 +850,7 @@ public class CreateAccount extends javax.swing.JFrame {
             showError("Phone Number is required.");
             return false;
         }
-        if(PhoneNumber.getText().length() != 11 || PhoneNumber.getText().startsWith("09")){
+        if(PhoneNumber.getText().length() != 11 || !PhoneNumber.getText().startsWith("09")){
             showError("Phone Number is Invalid.");
             return false;
         }

@@ -317,13 +317,10 @@ public class LoginPage extends javax.swing.JFrame {
         String password = new String(Password.getPassword());
         try {
             if (UserValidator.validateLogin(username, password)) {
-                EnterPin enterPin = new EnterPin();
-                enterPin.setVisible(true);
-                enterPin.setLocationRelativeTo(null);
-                dispose();
+                BankingApp.switchFrame(this, new EnterPin("LoginPage"));
             } else {
                 JOptionPane.showMessageDialog(LoginPage.this, "Invalid username or password.");
-            }
+            }   
         } catch (IOException | CsvException ex) {
             JOptionPane.showMessageDialog(LoginPage.this, "Error reading CSV file: " + ex.getMessage());
         }
@@ -355,10 +352,7 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_CreateMouseEntered
 
     private void CreateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreateMouseClicked
-        CreateAccount createAccount = new CreateAccount();
-                createAccount.setVisible(true);
-                createAccount.setLocationRelativeTo(null);
-                
+                BankingApp.switchFrame(this, new CreateAccount());
         dispose();
     }//GEN-LAST:event_CreateMouseClicked
 

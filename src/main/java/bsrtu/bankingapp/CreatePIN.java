@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -34,6 +33,11 @@ public class CreatePIN extends javax.swing.JFrame {
         addDocumentListener(PIN2);
         addDocumentListener(PIN3);
         addDocumentListener(PIN4);
+        
+        addKeyListenerToField(PIN1, PIN2, null);
+        addKeyListenerToField(PIN2, PIN3, PIN1);
+        addKeyListenerToField(PIN3, PIN4, PIN2);
+        addKeyListenerToField(PIN4, null, PIN3);
     }
     
     // CODE FOR LISTENING TO CHANGES
@@ -67,9 +71,7 @@ public class CreatePIN extends javax.swing.JFrame {
             String fullPIN = pin1 + pin2 + pin3 + pin4;
             try {
                 addPinToCSV(fullPIN);
-                LoginPage loginPage = new LoginPage();
-                loginPage.setVisible(true);
-                loginPage.setLocationRelativeTo(null);
+                BankingApp.showFrame(new LoginPage());
                 dispose();
                 JOptionPane.showMessageDialog(CreatePIN.this, "User details added successfully.");
             } catch (IOException ex) {
@@ -90,42 +92,30 @@ public class CreatePIN extends javax.swing.JFrame {
         }
     }
     
-    private void configurePINFields() {
-        setupPINField(PIN1, null, PIN2);
-        setupPINField(PIN2, PIN1, PIN3);
-        setupPINField(PIN3, PIN2, PIN4);
-        setupPINField(PIN4, PIN3, null);
-    }
-    
-    private void setupPINField(javax.swing.JPasswordField currentField, javax.swing.JPasswordField previousField, javax.swing.JPasswordField nextField) {
+    private void addKeyListenerToField(javax.swing.JPasswordField currentField, 
+                                       javax.swing.JPasswordField nextField, 
+                                       javax.swing.JPasswordField previousField) {
         currentField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
-                // Allow only digits
+
+                // Allow only digits to be entered
                 if (!Character.isDigit(c)) {
-                    e.consume();
-                    return;
+                    e.consume(); // Ignore the non-digit input
                 }
 
-                // Limit input length to 1 character
-                if (currentField.getPassword().length >= 1) {
-                    e.consume();
-                } else {
-                    // Automatically move to the next field
-                    SwingUtilities.invokeLater(() -> {
-                        if (nextField != null) {
-                            nextField.requestFocus();
-                        }
-                    });
+                // Move focus to the next field if the current field is filled
+                if (Character.isDigit(c) && currentField.getPassword().length == 1 && nextField != null) {
+                    nextField.requestFocus();
                 }
             }
 
             @Override
             public void keyPressed(KeyEvent e) {
-                // Backspace handling
-                if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE && currentField.getPassword().length == 0) {
-                    if (previousField != null) {
+                if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                    // If backspace is pressed and the current field is empty, move focus to the previous field
+                    if (currentField.getPassword().length == 0 && previousField != null) {
                         previousField.requestFocus();
                     }
                 }

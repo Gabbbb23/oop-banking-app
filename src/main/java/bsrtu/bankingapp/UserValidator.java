@@ -28,6 +28,7 @@ public class UserValidator {
             List<String[]> records = reader.readAll();
             for (String[] record : records) {
                 if (record[0].equals(username) && record[1].equals(password)) {
+                    
                     return true;
                 }
             }
