@@ -61,7 +61,7 @@ public class BankingApp {
                 showFrame(new LoginPage());
             }
             else{
-                showFrame(new EnterPin("LoginPage", value));
+                showFrame(new EnterPin("EnterPINAfterClosing", value));
                 JFrame frame = new JFrame();
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 JOptionPane.showMessageDialog(frame, "Welcome " + value + ". Enter your PIN");

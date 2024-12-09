@@ -289,7 +289,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="TransactionHistory" max="32767" attributes="0"/>
+                              <Component id="Back" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -298,14 +298,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="TransactionHistory" min="-2" max="-2" attributes="0"/>
+                              <Component id="Back" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JButton" name="TransactionHistory">
+                    <Component class="javax.swing.JButton" name="Back">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -318,6 +318,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="&gt; Back"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

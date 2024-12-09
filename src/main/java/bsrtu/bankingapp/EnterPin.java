@@ -4,6 +4,7 @@
  */
 package bsrtu.bankingapp;
 
+import static bsrtu.bankingapp.BankingApp.showFrame;
 import com.opencsv.exceptions.CsvException;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
@@ -86,6 +87,8 @@ public class EnterPin extends javax.swing.JFrame {
                         }
                     } else if ("AccountPage".equals(sourcePage)) {
                         pinAction = new PinAction.SettingsPinAction();
+                    } else if ("EnterPINAfterClosing".equals(sourcePage)) {
+                        
                     }
                     pinAction.onPinValidated();
                     dispose();
@@ -172,7 +175,7 @@ public class EnterPin extends javax.swing.JFrame {
         PIN3 = new javax.swing.JPasswordField();
         PIN4 = new javax.swing.JPasswordField();
         jPanel5 = new javax.swing.JPanel();
-        TransactionHistory = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -247,10 +250,15 @@ public class EnterPin extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
-        TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory.setForeground(new java.awt.Color(0, 51, 51));
-        TransactionHistory.setText("> Back");
+        Back.setBackground(new java.awt.Color(255, 204, 204));
+        Back.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        Back.setForeground(new java.awt.Color(0, 51, 51));
+        Back.setText("> Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -258,14 +266,14 @@ public class EnterPin extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TransactionHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TransactionHistory)
+                .addComponent(Back)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -384,6 +392,40 @@ public class EnterPin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PIN1ActionPerformed
 
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+        // TODO add your handling code here:
+        if("LoginPage".equals(sourcePage)){
+            showFrame(new LoginPage());
+            dispose();
+        }
+        else if("AccountPage".equals(sourcePage)){
+            showFrame(new AccountPage());
+            dispose();
+        }
+        else if("EnterPINAfterClosing".equals(sourcePage)){
+            try {
+                URL resource = getClass().getClassLoader().getResource("userLoggedIn.csv");
+                if (resource == null) {
+                    throw new IOException("CSV file not found");
+                }
+                File file = new File(resource.getFile());
+                clearCSVFile(file);
+                showFrame(new LoginPage());
+                dispose();
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, "Error clearing CSV file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_BackActionPerformed
+
+    private void clearCSVFile(File file) throws IOException {
+        try (FileWriter fw = new FileWriter(file, false)) {
+            // Opening the file in write mode without the append flag clears the file
+            fw.write("");
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -419,11 +461,11 @@ public class EnterPin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JPasswordField PIN1;
     private javax.swing.JPasswordField PIN2;
     private javax.swing.JPasswordField PIN3;
     private javax.swing.JPasswordField PIN4;
-    private javax.swing.JButton TransactionHistory;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

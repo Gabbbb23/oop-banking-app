@@ -241,7 +241,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsernameActionPerformed"/>
                   </Events>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="((AbstractDocument) Username.getDocument()).setDocumentFilter(new MaxLengthDocumentFilter(20));"/>
+                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="((AbstractDocument) Username.getDocument()).setDocumentFilter(new MaxLengthDocumentFilter(14));"/>
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="UsernameLabel">
@@ -253,7 +253,7 @@
                       <Font name="Product Sans" size="14" style="0"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
-                    <Property name="text" type="java.lang.String" value="Username (20 Characters) :"/>
+                    <Property name="text" type="java.lang.String" value="Username (14 Characters) :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="UsernameLabel1">

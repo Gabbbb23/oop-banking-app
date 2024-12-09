@@ -191,33 +191,32 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jPanel10" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="PhoneNumber" max="32767" attributes="0"/>
+                                      <Component id="Name" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jPanel19" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="PhoneNumber2" max="32767" attributes="0"/>
+                                      <Component id="Age" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="PhoneNumber3" max="32767" attributes="0"/>
+                                      <Component id="Birthday" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jPanel22" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="PhoneNumber4" max="32767" attributes="0"/>
+                                      <Component id="Nationality" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jPanel23" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="PhoneNumber5" max="32767" attributes="0"/>
+                                      <Component id="MaritalStatus" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jPanel24" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="PhoneNumber6" max="32767" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="HomeAddress" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -230,32 +229,32 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPanel10" max="32767" attributes="0"/>
-                                  <Component id="PhoneNumber" max="32767" attributes="0"/>
+                                  <Component id="Name" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPanel19" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PhoneNumber2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Age" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPanel21" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PhoneNumber3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Birthday" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPanel22" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PhoneNumber4" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Nationality" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPanel23" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PhoneNumber5" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="MaritalStatus" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPanel24" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PhoneNumber6" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HomeAddress" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -263,7 +262,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="PhoneNumber">
+                    <Component class="javax.swing.JLabel" name="Name">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -283,7 +282,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EmailAddressLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NameLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -292,13 +291,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddressLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NameLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="EmailAddressLabel2">
+                        <Component class="javax.swing.JLabel" name="NameLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Product Sans" size="13" style="1"/>
@@ -323,7 +322,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EmailAddressLabel5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AgeLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -332,13 +331,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddressLabel5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AgeLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="EmailAddressLabel5">
+                        <Component class="javax.swing.JLabel" name="AgeLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Product Sans" size="13" style="1"/>
@@ -351,7 +350,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="PhoneNumber2">
+                    <Component class="javax.swing.JLabel" name="Age">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -371,7 +370,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EmailAddressLabel7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BirthdayLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -380,13 +379,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddressLabel7" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BirthdayLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="EmailAddressLabel7">
+                        <Component class="javax.swing.JLabel" name="BirthdayLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Product Sans" size="13" style="1"/>
@@ -399,7 +398,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="PhoneNumber3">
+                    <Component class="javax.swing.JLabel" name="Birthday">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -419,7 +418,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EmailAddressLabel8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NationalityLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -428,13 +427,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddressLabel8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NationalityLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="EmailAddressLabel8">
+                        <Component class="javax.swing.JLabel" name="NationalityLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Product Sans" size="13" style="1"/>
@@ -447,7 +446,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="PhoneNumber4">
+                    <Component class="javax.swing.JLabel" name="Nationality">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -467,7 +466,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EmailAddressLabel9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MaritalStatusLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -476,13 +475,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddressLabel9" min="-2" max="-2" attributes="0"/>
+                                  <Component id="MaritalStatusLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="EmailAddressLabel9">
+                        <Component class="javax.swing.JLabel" name="MaritalStatusLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Product Sans" size="13" style="1"/>
@@ -495,7 +494,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="PhoneNumber5">
+                    <Component class="javax.swing.JLabel" name="MaritalStatus">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -515,7 +514,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EmailAddressLabel10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HomeAddressLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -524,13 +523,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddressLabel10" min="-2" max="-2" attributes="0"/>
+                                  <Component id="HomeAddressLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="EmailAddressLabel10">
+                        <Component class="javax.swing.JLabel" name="HomeAddressLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Product Sans" size="13" style="1"/>
@@ -543,7 +542,7 @@
                         </Component>
                       </SubComponents>
                     </Container>
-                    <Component class="javax.swing.JLabel" name="PhoneNumber6">
+                    <Component class="javax.swing.JLabel" name="HomeAddress">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -609,9 +608,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SignOut" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton4" pref="80" max="32767" attributes="0"/>
+                          <Component id="Back" pref="80" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -621,8 +620,8 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="7" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="SignOut" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Back" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -630,7 +629,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="jButton3">
+                <Component class="javax.swing.JButton" name="SignOut">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="0" red="99" type="rgb"/>
@@ -644,10 +643,10 @@
                     <Property name="text" type="java.lang.String" value="&gt; Sign Out"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignOutActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton4">
+                <Component class="javax.swing.JButton" name="Back">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="33" green="33" red="ff" type="rgb"/>
@@ -661,7 +660,7 @@
                     <Property name="text" type="java.lang.String" value="&gt; Back"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -771,7 +770,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="7" max="32767" attributes="0"/>
-                          <Component id="LinkedAccountsLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="LinkedAccountsLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -780,14 +779,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="LinkedAccountsLabel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="LinkedAccountsLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="LinkedAccountsLabel1">
+                <Component class="javax.swing.JLabel" name="LinkedAccountsLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Product Sans" size="18" style="0"/>
@@ -889,7 +888,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PhoneNumber1" max="32767" attributes="0"/>
+                              <Component id="PhoneNumber" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -900,7 +899,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPanel13" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PhoneNumber1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PhoneNumber" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -908,7 +907,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="PhoneNumber1">
+                    <Component class="javax.swing.JLabel" name="PhoneNumber">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -928,7 +927,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EmailAddressLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PhoneNumberLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -937,13 +936,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddressLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="PhoneNumberLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="EmailAddressLabel3">
+                        <Component class="javax.swing.JLabel" name="PhoneNumberLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Product Sans" size="13" style="1"/>
@@ -1012,7 +1011,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EmailAddress1" min="-2" pref="257" max="-2" attributes="0"/>
+                              <Component id="EmailAddress" min="-2" pref="257" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -1023,7 +1022,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jPanel18" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddress1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="EmailAddress" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -1031,7 +1030,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EmailAddress1">
+                    <Component class="javax.swing.JLabel" name="EmailAddress">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -1051,7 +1050,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="EmailAddressLabel4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="EmailAddressLabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -1060,13 +1059,13 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddressLabel4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="EmailAddressLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="EmailAddressLabel4">
+                        <Component class="javax.swing.JLabel" name="EmailAddressLabel">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Product Sans" size="13" style="1"/>
@@ -1132,7 +1131,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="LinkedAccountsLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="PersonalInformationLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -1141,14 +1140,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="LinkedAccountsLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="PersonalInformationLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="LinkedAccountsLabel">
+                <Component class="javax.swing.JLabel" name="PersonalInformationLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Product Sans" size="18" style="0"/>
