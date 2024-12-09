@@ -102,8 +102,19 @@ public class EnterPin extends javax.swing.JFrame {
                 }
 
                 // Move focus to the next field if the current field is filled
-                if (Character.isDigit(c) && currentField.getPassword().length == 1 && nextField != null) {
-                    nextField.requestFocus();
+                if (currentField.getPassword().length >= 1) {
+                e.consume(); // Prevent more than one digit
+                }
+
+            }
+            
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // Move to the next field if the current field is filled
+                if (currentField == PIN4 && currentField.getPassword().length == 1) {
+                checkAndSetPIN(); // Ensure full PIN is verified here
+                } else if (nextField != null && currentField.getPassword().length == 1) {
+                nextField.requestFocus(); // Move to the next field
                 }
             }
 
@@ -113,6 +124,7 @@ public class EnterPin extends javax.swing.JFrame {
                     // If backspace is pressed and the current field is empty, move focus to the previous field
                     if (currentField.getPassword().length == 0 && previousField != null) {
                         previousField.requestFocus();
+                        previousField.setText(""); 
                     }
                 }
             }
