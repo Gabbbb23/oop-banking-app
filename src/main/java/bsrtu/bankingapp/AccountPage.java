@@ -168,7 +168,7 @@ public class AccountPage extends javax.swing.JFrame {
         Balance.setFont(new java.awt.Font("Product Sans", 1, 36)); // NOI18N
         Balance.setForeground(new java.awt.Color(255, 255, 255));
         Balance.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Balance.setText("₱35.00");
+        Balance.setText("$35.00");
 
         TransferMoney.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         TransferMoney.setForeground(new java.awt.Color(102, 153, 255));

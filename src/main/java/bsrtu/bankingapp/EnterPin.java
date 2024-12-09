@@ -8,7 +8,11 @@ import com.opencsv.exceptions.CsvException;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URL;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -25,10 +29,12 @@ public class EnterPin extends javax.swing.JFrame {
      */
     private PinAction pinAction;
     private String sourcePage;
+    private String username;
     
-    public EnterPin(String sourcePage) {
+    public EnterPin(String sourcePage, String username) {
         initComponents();
-        this.sourcePage = sourcePage; 
+        this.sourcePage = sourcePage;
+        this.username = username;
         this.setBackground(new Color(0,0,0,0));
         addDocumentListener(PIN1);
         addDocumentListener(PIN2);
@@ -73,6 +79,11 @@ public class EnterPin extends javax.swing.JFrame {
                     
                     if ("LoginPage".equals(sourcePage)) {
                         pinAction = new PinAction.LoginPinAction();
+                        try {
+                            addUserAsLoggedIn(this.username);
+                        } catch (IOException ex) {
+                            JOptionPane.showMessageDialog(EnterPin.this, "Error writing to CSV file: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                        }
                     } else if ("AccountPage".equals(sourcePage)) {
                         pinAction = new PinAction.SettingsPinAction();
                     }
@@ -87,6 +98,17 @@ public class EnterPin extends javax.swing.JFrame {
         }
     }
     
+    private void addUserAsLoggedIn(String username) throws IOException {
+        URL resource = getClass().getClassLoader().getResource("userLoggedIn.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+        File file = new File(resource.getFile());
+        try (FileWriter fw = new FileWriter(file, true);
+             PrintWriter pw = new PrintWriter(fw)) {
+            pw.printf("%s%n", username);
+        }
+    }
     
     private void addKeyListenerToField(javax.swing.JPasswordField currentField, 
                                        javax.swing.JPasswordField nextField, 

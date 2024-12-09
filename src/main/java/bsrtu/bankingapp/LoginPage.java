@@ -317,7 +317,8 @@ public class LoginPage extends javax.swing.JFrame {
         String password = new String(Password.getPassword());
         try {
             if (UserValidator.validateLogin(username, password)) {
-                BankingApp.switchFrame(this, new EnterPin("LoginPage"));
+                // Everytime we use Enter Pin for something else other than logging in, we just pass in null as the second argument.
+                BankingApp.switchFrame(this, new EnterPin("LoginPage", username));
             } else {
                 JOptionPane.showMessageDialog(LoginPage.this, "Invalid username or password.");
             }   
