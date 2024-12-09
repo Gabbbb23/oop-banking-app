@@ -405,7 +405,7 @@ public class Settings extends javax.swing.JFrame {
                 .addComponent(UsernameLabel)
                 .addGap(1, 1, 1)
                 .addComponent(Username)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         UsernamePanelLayout.setVerticalGroup(
             UsernamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
