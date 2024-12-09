@@ -112,7 +112,7 @@ public class CreateAccount extends javax.swing.JFrame {
 
         Panel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        ((AbstractDocument) Username.getDocument()).setDocumentFilter(new MaxLengthDocumentFilter(20));
+        ((AbstractDocument) Username.getDocument()).setDocumentFilter(new MaxLengthDocumentFilter(14));
         Username.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         Username.setForeground(new java.awt.Color(153, 153, 153));
         Username.setText("Enter Username");
@@ -138,7 +138,7 @@ public class CreateAccount extends javax.swing.JFrame {
         UsernameLabel.setBackground(new java.awt.Color(153, 153, 153));
         UsernameLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         UsernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        UsernameLabel.setText("Username (20 Characters) :");
+        UsernameLabel.setText("Username (14 Characters) :");
 
         UsernameLabel1.setBackground(new java.awt.Color(153, 153, 153));
         UsernameLabel1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
@@ -891,6 +891,15 @@ public class CreateAccount extends javax.swing.JFrame {
         String email = EmailAddress.getText();
         String homeAddress = HomeAddress.getText();
         
+        String maritalStatus = "";
+        if (ButtonSingle.isSelected()) {
+            maritalStatus = "Single";
+        } else if (ButtonMarried.isSelected()) {
+            maritalStatus = "Married";
+        } else if (ButtonWidowed.isSelected()) {
+            maritalStatus = "Widowed";
+        }
+        
         URL resource = getClass().getClassLoader().getResource("users.csv");
         if (resource == null) {
             throw new IOException("CSV file not found");
@@ -898,8 +907,8 @@ public class CreateAccount extends javax.swing.JFrame {
         File file = new File(resource.getFile());
         try (FileWriter fw = new FileWriter(file, true);
              PrintWriter pw = new PrintWriter(fw)) {
-            pw.printf("%s,%s,%d,%s,%s,%s,%s,%s,%s,%s,",
-                    username, password, balance, fullName, age, birthday, nationality, phoneNumber, email, homeAddress);
+            pw.printf("%s,%s,%d,%s,%s,%s,%s,%s,%s,%s,%s,",
+                    username, password, balance, fullName, age, birthday, nationality, phoneNumber, email, homeAddress, maritalStatus);
         }
     }
 

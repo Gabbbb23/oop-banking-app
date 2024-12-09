@@ -45,7 +45,7 @@ public class UserValidator {
         try (CSVReader reader = new CSVReader(new InputStreamReader(inputStream))) {
             List<String[]> records = reader.readAll();
             for (String[] record : records) {
-                if (record[10].equals(PIN)) {
+                if (record[11].equals(PIN)) {
                     return true;
                 }
             }
