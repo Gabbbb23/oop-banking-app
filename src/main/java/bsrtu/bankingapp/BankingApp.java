@@ -8,15 +8,15 @@ public class BankingApp {
     
     public static void switchFrame(JFrame currentFrame, JFrame nextFrame) {
     if (currentFrame != null) {
-        currentFrame.dispose();  // Close the current frame
+        currentFrame.dispose();  
     }
-    showFrame(nextFrame);         // Show the next frame
+    showFrame(nextFrame);      
 }
     
     public static void showFrame(JFrame frame) {
         if (frame != null) {
-            frame.setVisible(true);               // Make the frame visible
-            frame.setLocationRelativeTo(null);   // Center the frame on the screen
+            frame.setVisible(true);  
+            frame.setLocationRelativeTo(null);
         }
     }
     

@@ -43,7 +43,7 @@ public class AccountPage extends javax.swing.JFrame {
         BalanceLabel = new javax.swing.JLabel();
         Balance = new javax.swing.JLabel();
         TransferMoney = new javax.swing.JButton();
-        TransferMoney2 = new javax.swing.JButton();
+        Settings = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         NameLabel = new javax.swing.JLabel();
 
@@ -194,7 +194,7 @@ public class AccountPage extends javax.swing.JFrame {
                         .addGroup(BalancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Balance, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BalanceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 141, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(20, 20, 20))
         );
         BalancePanelLayout.setVerticalGroup(
@@ -209,9 +209,14 @@ public class AccountPage extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        TransferMoney2.setFont(new java.awt.Font("Product Sans", 1, 12)); // NOI18N
-        TransferMoney2.setText("Settings");
-        TransferMoney2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Settings.setFont(new java.awt.Font("Product Sans", 1, 12)); // NOI18N
+        Settings.setText("Settings");
+        Settings.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Settings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SettingsActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -228,8 +233,8 @@ public class AccountPage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(NameLabel)
-                .addContainerGap())
+                .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +254,7 @@ public class AccountPage extends javax.swing.JFrame {
                     .addGroup(BalanceBackgroundLayout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TransferMoney2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(Settings, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(BalancePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -259,7 +264,7 @@ public class AccountPage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(BalanceBackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TransferMoney2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Settings, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BalancePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -334,6 +339,11 @@ public class AccountPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TransferMoney1ActionPerformed
 
+    private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsActionPerformed
+        // TODO add your handling code here:
+        BankingApp.switchFrame(this, new Settings());
+    }//GEN-LAST:event_SettingsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -381,10 +391,10 @@ public class AccountPage extends javax.swing.JFrame {
     private javax.swing.JPanel MainPanel;
     private javax.swing.JLabel NameLabel;
     private javax.swing.JLabel NameLabel3;
+    private javax.swing.JButton Settings;
     private javax.swing.JButton TransactionHistory;
     private javax.swing.JButton TransferMoney;
     private javax.swing.JButton TransferMoney1;
-    private javax.swing.JButton TransferMoney2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
