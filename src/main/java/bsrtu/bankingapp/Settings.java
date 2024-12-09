@@ -4,7 +4,15 @@
  */
 package bsrtu.bankingapp;
 
+import static bsrtu.bankingapp.BankingApp.showFrame;
 import java.awt.Color;
+import java.io.IOException;
+import java.net.URL;
+import java.io.FileWriter;
+import java.io.File;
+import javax.swing.JOptionPane;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 /**
  *
@@ -17,6 +25,23 @@ public class Settings extends javax.swing.JFrame {
      */
     public Settings() {
         initComponents();
+        try {
+            Username.setText(getUserDataFromCSV(0));
+            Name.setText(getUserDataFromCSV(3));
+            Age.setText(getUserDataFromCSV(4));
+            Birthday.setText(getUserDataFromCSV(5));
+            Nationality.setText(getUserDataFromCSV(6));
+            MaritalStatus.setText(getUserDataFromCSV(10));
+            HomeAddress.setText(getUserDataFromCSV(9));
+            PhoneNumber.setText(getUserDataFromCSV(7));
+            String tmp = getUserDataFromCSV(8);
+            if (tmp.length() > 20) {
+                tmp = tmp.substring(0, 20) + "...";
+            }
+            EmailAddress.setText(tmp);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         this.setBackground(new Color(0,0,0,0));
     }
 
@@ -34,48 +59,48 @@ public class Settings extends javax.swing.JFrame {
         LinkedAccountsPanel = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        PhoneNumber = new javax.swing.JLabel();
+        Name = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
-        EmailAddressLabel2 = new javax.swing.JLabel();
+        NameLabel = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
-        EmailAddressLabel5 = new javax.swing.JLabel();
-        PhoneNumber2 = new javax.swing.JLabel();
+        AgeLabel = new javax.swing.JLabel();
+        Age = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
-        EmailAddressLabel7 = new javax.swing.JLabel();
-        PhoneNumber3 = new javax.swing.JLabel();
+        BirthdayLabel = new javax.swing.JLabel();
+        Birthday = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
-        EmailAddressLabel8 = new javax.swing.JLabel();
-        PhoneNumber4 = new javax.swing.JLabel();
+        NationalityLabel = new javax.swing.JLabel();
+        Nationality = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
-        EmailAddressLabel9 = new javax.swing.JLabel();
-        PhoneNumber5 = new javax.swing.JLabel();
+        MaritalStatusLabel = new javax.swing.JLabel();
+        MaritalStatus = new javax.swing.JLabel();
         jPanel24 = new javax.swing.JPanel();
-        EmailAddressLabel10 = new javax.swing.JLabel();
-        PhoneNumber6 = new javax.swing.JLabel();
+        HomeAddressLabel = new javax.swing.JLabel();
+        HomeAddress = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        SignOut = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
         UsernamePanel = new javax.swing.JPanel();
         UsernameLabel = new javax.swing.JLabel();
         Username = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jPanel15 = new javax.swing.JPanel();
-        LinkedAccountsLabel1 = new javax.swing.JLabel();
+        LinkedAccountsLabel = new javax.swing.JLabel();
         LinkedAccountsPanel1 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
-        PhoneNumber1 = new javax.swing.JLabel();
+        PhoneNumber = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
-        EmailAddressLabel3 = new javax.swing.JLabel();
+        PhoneNumberLabel = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
-        EmailAddress1 = new javax.swing.JLabel();
+        EmailAddress = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
-        EmailAddressLabel4 = new javax.swing.JLabel();
+        EmailAddressLabel = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
-        LinkedAccountsLabel = new javax.swing.JLabel();
+        PersonalInformationLabel = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -93,14 +118,14 @@ public class Settings extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        PhoneNumber.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber.setText("John Pork");
+        Name.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Name.setText("John Pork");
 
         jPanel10.setBackground(new java.awt.Color(204, 204, 204));
 
-        EmailAddressLabel2.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
-        EmailAddressLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        EmailAddressLabel2.setText("Name:");
+        NameLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
+        NameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        NameLabel.setText("Name:");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -108,21 +133,21 @@ public class Settings extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmailAddressLabel2)
+                .addComponent(NameLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EmailAddressLabel2))
+                .addComponent(NameLabel))
         );
 
         jPanel19.setBackground(new java.awt.Color(204, 204, 204));
 
-        EmailAddressLabel5.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
-        EmailAddressLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        EmailAddressLabel5.setText("Age:");
+        AgeLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
+        AgeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        AgeLabel.setText("Age:");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -130,24 +155,24 @@ public class Settings extends javax.swing.JFrame {
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmailAddressLabel5)
+                .addComponent(AgeLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EmailAddressLabel5))
+                .addComponent(AgeLabel))
         );
 
-        PhoneNumber2.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber2.setText("21");
+        Age.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Age.setText("21");
 
         jPanel21.setBackground(new java.awt.Color(204, 204, 204));
 
-        EmailAddressLabel7.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
-        EmailAddressLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        EmailAddressLabel7.setText("Birthday:");
+        BirthdayLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
+        BirthdayLabel.setForeground(new java.awt.Color(255, 255, 255));
+        BirthdayLabel.setText("Birthday:");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -155,24 +180,24 @@ public class Settings extends javax.swing.JFrame {
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmailAddressLabel7)
+                .addComponent(BirthdayLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EmailAddressLabel7))
+                .addComponent(BirthdayLabel))
         );
 
-        PhoneNumber3.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber3.setText("09/21/2005");
+        Birthday.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Birthday.setText("09/21/2005");
 
         jPanel22.setBackground(new java.awt.Color(204, 204, 204));
 
-        EmailAddressLabel8.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
-        EmailAddressLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        EmailAddressLabel8.setText("Nationality:");
+        NationalityLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
+        NationalityLabel.setForeground(new java.awt.Color(255, 255, 255));
+        NationalityLabel.setText("Nationality:");
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -180,24 +205,24 @@ public class Settings extends javax.swing.JFrame {
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmailAddressLabel8)
+                .addComponent(NationalityLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EmailAddressLabel8))
+                .addComponent(NationalityLabel))
         );
 
-        PhoneNumber4.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber4.setText("Filipino");
+        Nationality.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Nationality.setText("Filipino");
 
         jPanel23.setBackground(new java.awt.Color(204, 204, 204));
 
-        EmailAddressLabel9.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
-        EmailAddressLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        EmailAddressLabel9.setText("Marital Status:");
+        MaritalStatusLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
+        MaritalStatusLabel.setForeground(new java.awt.Color(255, 255, 255));
+        MaritalStatusLabel.setText("Marital Status:");
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -205,24 +230,24 @@ public class Settings extends javax.swing.JFrame {
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmailAddressLabel9)
+                .addComponent(MaritalStatusLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EmailAddressLabel9))
+                .addComponent(MaritalStatusLabel))
         );
 
-        PhoneNumber5.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber5.setText("Widowed");
+        MaritalStatus.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        MaritalStatus.setText("Widowed");
 
         jPanel24.setBackground(new java.awt.Color(204, 204, 204));
 
-        EmailAddressLabel10.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
-        EmailAddressLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        EmailAddressLabel10.setText("Home Address:");
+        HomeAddressLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
+        HomeAddressLabel.setForeground(new java.awt.Color(255, 255, 255));
+        HomeAddressLabel.setText("Home Address:");
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -230,18 +255,18 @@ public class Settings extends javax.swing.JFrame {
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmailAddressLabel10)
+                .addComponent(HomeAddressLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EmailAddressLabel10))
+                .addComponent(HomeAddressLabel))
         );
 
-        PhoneNumber6.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber6.setText("132 Oklahoma St. Ohio City United States");
+        HomeAddress.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        HomeAddress.setText("132 Oklahoma St. Ohio City United States");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -253,28 +278,27 @@ public class Settings extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PhoneNumber2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Age, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PhoneNumber3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Birthday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PhoneNumber4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Nationality, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PhoneNumber5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(MaritalStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PhoneNumber6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(HomeAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -283,27 +307,27 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Age, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Birthday, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Nationality, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(MaritalStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(HomeAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -346,23 +370,23 @@ public class Settings extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton3.setBackground(new java.awt.Color(153, 0, 51));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("> Sign Out");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        SignOut.setBackground(new java.awt.Color(153, 0, 51));
+        SignOut.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        SignOut.setForeground(new java.awt.Color(255, 255, 255));
+        SignOut.setText("> Sign Out");
+        SignOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                SignOutActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(255, 51, 51));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("> Back");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Back.setBackground(new java.awt.Color(255, 51, 51));
+        Back.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Back.setForeground(new java.awt.Color(255, 255, 255));
+        Back.setText("> Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                BackActionPerformed(evt);
             }
         });
 
@@ -372,9 +396,9 @@ public class Settings extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3)
+                .addComponent(SignOut)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -382,8 +406,8 @@ public class Settings extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(7, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(SignOut)
+                    .addComponent(Back))
                 .addContainerGap())
         );
 
@@ -405,7 +429,7 @@ public class Settings extends javax.swing.JFrame {
                 .addComponent(UsernameLabel)
                 .addGap(1, 1, 1)
                 .addComponent(Username)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         UsernamePanelLayout.setVerticalGroup(
             UsernamePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -443,8 +467,8 @@ public class Settings extends javax.swing.JFrame {
 
         jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        LinkedAccountsLabel1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        LinkedAccountsLabel1.setText("Linked Accounts:");
+        LinkedAccountsLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        LinkedAccountsLabel.setText("Linked Accounts:");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -452,14 +476,14 @@ public class Settings extends javax.swing.JFrame {
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                 .addContainerGap(7, Short.MAX_VALUE)
-                .addComponent(LinkedAccountsLabel1)
+                .addComponent(LinkedAccountsLabel)
                 .addContainerGap())
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LinkedAccountsLabel1)
+                .addComponent(LinkedAccountsLabel)
                 .addContainerGap())
         );
 
@@ -489,14 +513,14 @@ public class Settings extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
         jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        PhoneNumber1.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber1.setText("09132465798");
+        PhoneNumber.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        PhoneNumber.setText("09132465798");
 
         jPanel13.setBackground(new java.awt.Color(204, 204, 204));
 
-        EmailAddressLabel3.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
-        EmailAddressLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        EmailAddressLabel3.setText("Phone Number:");
+        PhoneNumberLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
+        PhoneNumberLabel.setForeground(new java.awt.Color(255, 255, 255));
+        PhoneNumberLabel.setText("Phone Number:");
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -504,14 +528,14 @@ public class Settings extends javax.swing.JFrame {
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmailAddressLabel3)
+                .addComponent(PhoneNumberLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EmailAddressLabel3))
+                .addComponent(PhoneNumberLabel))
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -522,7 +546,7 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PhoneNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -531,7 +555,7 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -558,14 +582,14 @@ public class Settings extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        EmailAddress1.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        EmailAddress1.setText("porkjohn01@hotmail.com");
+        EmailAddress.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        EmailAddress.setText("porkjohn01@hotmail.com");
 
         jPanel18.setBackground(new java.awt.Color(204, 204, 204));
 
-        EmailAddressLabel4.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
-        EmailAddressLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        EmailAddressLabel4.setText("Email Address: ");
+        EmailAddressLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
+        EmailAddressLabel.setForeground(new java.awt.Color(255, 255, 255));
+        EmailAddressLabel.setText("Email Address: ");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -573,14 +597,14 @@ public class Settings extends javax.swing.JFrame {
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(EmailAddressLabel4)
+                .addComponent(EmailAddressLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(EmailAddressLabel4))
+                .addComponent(EmailAddressLabel))
         );
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -591,7 +615,7 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EmailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -600,7 +624,7 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EmailAddress1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(EmailAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -647,8 +671,8 @@ public class Settings extends javax.swing.JFrame {
 
         jPanel26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        LinkedAccountsLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
-        LinkedAccountsLabel.setText("Personal Information:");
+        PersonalInformationLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        PersonalInformationLabel.setText("Personal Information:");
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -656,14 +680,14 @@ public class Settings extends javax.swing.JFrame {
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LinkedAccountsLabel)
+                .addComponent(PersonalInformationLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LinkedAccountsLabel)
+                .addComponent(PersonalInformationLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -742,13 +766,67 @@ public class Settings extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private String getUserDataFromCSV(int data) throws IOException {
+        URL resource;
+        File file;
+        resource = getClass().getClassLoader().getResource("userLoggedIn.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+        file = new File(resource.getFile());
+        
+        String value;
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+                value = br.readLine();
+            }
+        
+        resource = getClass().getClassLoader().getResource("users.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+        
+        file = new File(resource.getFile());
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                if (values.length > 0 && values[0].equals(value)) {
+                    return values[data];
+                }
+            }
+        }
+        return null;
+    }
+    
+    private void SignOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignOutActionPerformed
+        try {
+            URL resource = getClass().getClassLoader().getResource("userLoggedIn.csv");
+            if (resource == null) {
+                throw new IOException("CSV file not found");
+            }
+            File file = new File(resource.getFile());
+            clearCSVFile(file);
+            showFrame(new LoginPage());
+            dispose();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error clearing CSV file: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_SignOutActionPerformed
+
+    private void clearCSVFile(File file) throws IOException {
+        try (FileWriter fw = new FileWriter(file, false)) {
+            // Opening the file in write mode without the append flag clears the file
+            fw.write("");
+        }
+    }
+    
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        BankingApp.switchFrame(this, new AccountPage());
+        dispose();
+    }//GEN-LAST:event_BackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -786,31 +864,31 @@ public class Settings extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel EmailAddress1;
-    private javax.swing.JLabel EmailAddressLabel10;
-    private javax.swing.JLabel EmailAddressLabel2;
-    private javax.swing.JLabel EmailAddressLabel3;
-    private javax.swing.JLabel EmailAddressLabel4;
-    private javax.swing.JLabel EmailAddressLabel5;
-    private javax.swing.JLabel EmailAddressLabel7;
-    private javax.swing.JLabel EmailAddressLabel8;
-    private javax.swing.JLabel EmailAddressLabel9;
+    private javax.swing.JLabel Age;
+    private javax.swing.JLabel AgeLabel;
+    private javax.swing.JButton Back;
+    private javax.swing.JLabel Birthday;
+    private javax.swing.JLabel BirthdayLabel;
+    private javax.swing.JLabel EmailAddress;
+    private javax.swing.JLabel EmailAddressLabel;
+    private javax.swing.JLabel HomeAddress;
+    private javax.swing.JLabel HomeAddressLabel;
     private javax.swing.JLabel LinkedAccountsLabel;
-    private javax.swing.JLabel LinkedAccountsLabel1;
     private javax.swing.JPanel LinkedAccountsPanel;
     private javax.swing.JPanel LinkedAccountsPanel1;
+    private javax.swing.JLabel MaritalStatus;
+    private javax.swing.JLabel MaritalStatusLabel;
+    private javax.swing.JLabel Name;
+    private javax.swing.JLabel NameLabel;
+    private javax.swing.JLabel Nationality;
+    private javax.swing.JLabel NationalityLabel;
+    private javax.swing.JLabel PersonalInformationLabel;
     private javax.swing.JLabel PhoneNumber;
-    private javax.swing.JLabel PhoneNumber1;
-    private javax.swing.JLabel PhoneNumber2;
-    private javax.swing.JLabel PhoneNumber3;
-    private javax.swing.JLabel PhoneNumber4;
-    private javax.swing.JLabel PhoneNumber5;
-    private javax.swing.JLabel PhoneNumber6;
+    private javax.swing.JLabel PhoneNumberLabel;
+    private javax.swing.JButton SignOut;
     private javax.swing.JLabel Username;
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JPanel UsernamePanel;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
