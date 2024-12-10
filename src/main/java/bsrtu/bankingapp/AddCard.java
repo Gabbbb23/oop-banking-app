@@ -51,7 +51,7 @@ public class AddCard extends javax.swing.JFrame {
         BPI = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         PNB = new javax.swing.JLabel();
-        TransactionHistory = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -302,10 +302,15 @@ public class AddCard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
-        TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory.setForeground(new java.awt.Color(0, 51, 51));
-        TransactionHistory.setText("> Back");
+        Back.setBackground(new java.awt.Color(255, 204, 204));
+        Back.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        Back.setForeground(new java.awt.Color(0, 51, 51));
+        Back.setText("> Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -315,7 +320,7 @@ public class AddCard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CardsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TransactionHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         MainPanelLayout.setVerticalGroup(
@@ -324,7 +329,7 @@ public class AddCard extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(CardsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TransactionHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -403,6 +408,10 @@ public class AddCard extends javax.swing.JFrame {
     private void PNBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PNBMouseClicked
         openWebsite("https://www.pnb.com.ph/index.php/pnb-debit-savings-account");
     }//GEN-LAST:event_PNBMouseClicked
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        BankingApp.switchFrame(this, new ManageCards());
+    }//GEN-LAST:event_BackMouseClicked
     
     /**
      * @param args the command line arguments
@@ -442,6 +451,7 @@ public class AddCard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BDO;
     private javax.swing.JLabel BPI;
+    private javax.swing.JButton Back;
     private javax.swing.JPanel Border;
     private javax.swing.JLabel CardsLabel;
     private javax.swing.JPanel CardsPanel;
@@ -450,7 +460,6 @@ public class AddCard extends javax.swing.JFrame {
     private javax.swing.JPanel MainPanel;
     private javax.swing.JLabel PNB;
     private javax.swing.JLabel RCBC;
-    private javax.swing.JButton TransactionHistory;
     private javax.swing.JLabel UB;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

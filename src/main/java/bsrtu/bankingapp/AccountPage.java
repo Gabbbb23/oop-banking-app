@@ -79,7 +79,7 @@ public class AccountPage extends javax.swing.JFrame {
         CardsPanel = new javax.swing.JPanel();
         LinkedCards = new javax.swing.JPanel();
         LinkedCardsLabel = new javax.swing.JLabel();
-        TransferMoney1 = new javax.swing.JButton();
+        ManageCards = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         NameLabel3 = new javax.swing.JLabel();
         TransactionHistory = new javax.swing.JButton();
@@ -111,13 +111,18 @@ public class AccountPage extends javax.swing.JFrame {
         LinkedCardsLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LinkedCardsLabel.setText("You have no linked cards.");
 
-        TransferMoney1.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
-        TransferMoney1.setForeground(new java.awt.Color(102, 102, 102));
-        TransferMoney1.setText("Manage Cards");
-        TransferMoney1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        TransferMoney1.addActionListener(new java.awt.event.ActionListener() {
+        ManageCards.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        ManageCards.setForeground(new java.awt.Color(102, 102, 102));
+        ManageCards.setText("Manage Cards");
+        ManageCards.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        ManageCards.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ManageCardsMouseClicked(evt);
+            }
+        });
+        ManageCards.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TransferMoney1ActionPerformed(evt);
+                ManageCardsActionPerformed(evt);
             }
         });
 
@@ -127,7 +132,7 @@ public class AccountPage extends javax.swing.JFrame {
             LinkedCardsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LinkedCardsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TransferMoney1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ManageCards, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
             .addGroup(LinkedCardsLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -140,7 +145,7 @@ public class AccountPage extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(LinkedCardsLabel)
                 .addGap(66, 66, 66)
-                .addComponent(TransferMoney1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ManageCards, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -197,6 +202,11 @@ public class AccountPage extends javax.swing.JFrame {
         TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         TransactionHistory.setForeground(new java.awt.Color(0, 51, 51));
         TransactionHistory.setText("Transaction History");
+        TransactionHistory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TransactionHistoryMouseClicked(evt);
+            }
+        });
 
         BalanceBackground.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -385,9 +395,9 @@ public class AccountPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TransferMoneyActionPerformed
 
-    private void TransferMoney1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferMoney1ActionPerformed
+    private void ManageCardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManageCardsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TransferMoney1ActionPerformed
+    }//GEN-LAST:event_ManageCardsActionPerformed
 
     private void SettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SettingsActionPerformed
         // TODO add your handling code here:
@@ -400,6 +410,14 @@ public class AccountPage extends javax.swing.JFrame {
         sendMoney.setLocationRelativeTo(null);
         dispose();
     }//GEN-LAST:event_TransferMoneyMouseClicked
+
+    private void ManageCardsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ManageCardsMouseClicked
+        BankingApp.switchFrame(this, new ManageCards());
+    }//GEN-LAST:event_ManageCardsMouseClicked
+
+    private void TransactionHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransactionHistoryMouseClicked
+        BankingApp.switchFrame(this, new TransactionHistory());
+    }//GEN-LAST:event_TransactionHistoryMouseClicked
 
     /**
      * @param args the command line arguments
@@ -446,12 +464,12 @@ public class AccountPage extends javax.swing.JFrame {
     private javax.swing.JPanel LinkedCards;
     private javax.swing.JLabel LinkedCardsLabel;
     private javax.swing.JPanel MainPanel;
+    private javax.swing.JButton ManageCards;
     private javax.swing.JLabel NameLabel;
     private javax.swing.JLabel NameLabel3;
     private javax.swing.JButton Settings;
     private javax.swing.JButton TransactionHistory;
     private javax.swing.JButton TransferMoney;
-    private javax.swing.JButton TransferMoney1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables

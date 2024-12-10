@@ -138,6 +138,11 @@ public class WithdrawMoney extends javax.swing.JFrame {
         TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         TransactionHistory.setForeground(new java.awt.Color(0, 51, 51));
         TransactionHistory.setText("> Back");
+        TransactionHistory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TransactionHistoryMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -246,6 +251,10 @@ public class WithdrawMoney extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TransactionHistoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TransactionHistoryMouseClicked
+        BankingApp.switchFrame(this, new ManageCards());
+    }//GEN-LAST:event_TransactionHistoryMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -286,9 +295,6 @@ public class WithdrawMoney extends javax.swing.JFrame {
     private javax.swing.JLabel CardsLabel;
     private javax.swing.JLabel CardsLabel1;
     private javax.swing.JPanel CardsPanel;
-    private javax.swing.JLabel LinkedAccountsLabel;
-    private javax.swing.JLabel LinkedAccountsLabel1;
-    private javax.swing.JLabel LinkedAccountsLabel2;
     private javax.swing.JLabel LinkedAccountsLabel3;
     private javax.swing.JPanel MainPanel;
     private javax.swing.JButton TransactionHistory;
@@ -296,12 +302,6 @@ public class WithdrawMoney extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel27;
-    private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JTextField jTextField2;
