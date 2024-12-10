@@ -17,11 +17,9 @@ import java.nio.file.*;
 
 public class FileEncryptionManager {
 
-    // Method to read and decrypt a file using URL
     public static List<String> readDecryptedFile(URL fileURL) throws Exception {
         List<String> decryptedRecords = new ArrayList<>();
         
-        // Convert URL to InputStream
         try (InputStream inputStream = fileURL.openStream();
              BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
 
@@ -34,7 +32,6 @@ public class FileEncryptionManager {
         return decryptedRecords;
     }
 
-    // Method to write and encrypt data to a file
     public static void writeEncryptedFile(URL fileURL, List<String> data) throws Exception {
         // Convert URL to a File object for writing
         File file = new File(fileURL.toURI());
@@ -47,7 +44,6 @@ public class FileEncryptionManager {
         }
     }
 
-    // Method to load user data from a CSV file and decrypt it for usage
     public static List<String[]> loadUserData(URL fileURL) throws Exception {
         List<String> decryptedRecords = readDecryptedFile(fileURL);
         List<String[]> userData = new ArrayList<>();
@@ -60,7 +56,6 @@ public class FileEncryptionManager {
         return userData;
     }
 
-    // Method to save user data (without encryption) when adding or updating users
     public static void saveUserData(URL fileURL, List<String[]> userData) throws Exception {
         List<String> records = new ArrayList<>();
 

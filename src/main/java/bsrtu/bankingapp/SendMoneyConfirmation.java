@@ -5,6 +5,16 @@
 package bsrtu.bankingapp;
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,10 +24,26 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
 
     /**
      * Creates new form TransferMoney
+     * @param phoneNumber
+     * @param amount
+     * @param name
      */
-    public SendMoneyConfirmation() {
-        initComponents();
-        this.setBackground(new Color(0,0,0,0));
+    private String phoneNumber;
+    private String ownPhoneNumber;
+    
+    public SendMoneyConfirmation(String phoneNumber, String ownPhoneNumber, String amount) {
+        try{
+            initComponents();
+            this.phoneNumber = phoneNumber;
+            this.ownPhoneNumber = ownPhoneNumber;
+            Name.setText(getUserDataFromCSV(3, 7, this.phoneNumber));
+            PhoneNumber.setText(phoneNumber);
+            Amount.setText("$"+amount);
+            this.setBackground(new Color(0,0,0,0));
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -30,38 +56,49 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        TransactionHistory = new javax.swing.JButton();
-        TransactionHistory1 = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
+        Confirm = new javax.swing.JButton();
         LinkedAccountsPanel1 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
-        PhoneNumber1 = new javax.swing.JLabel();
+        Name = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         EmailAddressLabel3 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
-        EmailAddress1 = new javax.swing.JLabel();
+        PhoneNumber = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         EmailAddressLabel4 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
-        EmailAddress2 = new javax.swing.JLabel();
+        Amount = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         EmailAddressLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
-        TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory.setForeground(new java.awt.Color(0, 51, 51));
-        TransactionHistory.setText("> Back");
+        Back.setBackground(new java.awt.Color(255, 204, 204));
+        Back.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        Back.setForeground(new java.awt.Color(0, 51, 51));
+        Back.setText("> Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
 
-        TransactionHistory1.setBackground(new java.awt.Color(204, 255, 204));
-        TransactionHistory1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory1.setForeground(new java.awt.Color(0, 51, 51));
-        TransactionHistory1.setText("> Confirm");
+        Confirm.setBackground(new java.awt.Color(204, 255, 204));
+        Confirm.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        Confirm.setForeground(new java.awt.Color(0, 51, 51));
+        Confirm.setText("> Confirm");
+        Confirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConfirmMouseClicked(evt);
+            }
+        });
 
         LinkedAccountsPanel1.setBackground(java.awt.Color.white);
         LinkedAccountsPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -72,8 +109,8 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
         jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        PhoneNumber1.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber1.setText("John Pork");
+        Name.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Name.setText("John Pork");
 
         jPanel13.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -105,7 +142,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PhoneNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -114,7 +151,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -141,8 +178,8 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        EmailAddress1.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        EmailAddress1.setText("696969696");
+        PhoneNumber.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        PhoneNumber.setText("696969696");
 
         jPanel18.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -174,7 +211,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -183,7 +220,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EmailAddress1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -210,8 +247,8 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
         jPanel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        EmailAddress2.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        EmailAddress2.setText("₱10.00");
+        Amount.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Amount.setText("₱10.00");
 
         jPanel21.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -243,7 +280,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
@@ -252,7 +289,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EmailAddress2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Amount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -309,9 +346,9 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LinkedAccountsPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(TransactionHistory1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TransactionHistory)))
+                        .addComponent(Back)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -321,8 +358,8 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addComponent(LinkedAccountsPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TransactionHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TransactionHistory1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -346,6 +383,88 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmMouseClicked
+        try {
+            String newBalance = "50";
+            updateUserDataInCSV(2, 7, this.ownPhoneNumber, newBalance);
+            newBalance = "100";
+            updateUserDataInCSV(2, 7, this.phoneNumber, newBalance);
+            JOptionPane.showMessageDialog(SendMoneyConfirmation.this, "Money Sent Successfully.");
+            AccountPage accountPage = new AccountPage();
+            accountPage.setVisible(true);
+            accountPage.setLocationRelativeTo(null);
+            dispose();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_ConfirmMouseClicked
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        SendMoney sendMoney = new SendMoney();
+        sendMoney.setVisible(true);
+        sendMoney.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_BackMouseClicked
+    
+    private String getUserDataFromCSV(int data, int dataRequired, String value) throws IOException {
+        URL resource;
+        File file;
+        
+        resource = getClass().getClassLoader().getResource("users.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+        
+        file = new File(resource.getFile());
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                if (values.length > 0 && values[dataRequired].equals(value)) {
+                    return values[data];
+                }
+            }
+        }
+        return null;
+    }
+    private void updateUserDataInCSV(int data, int dataRequired, String value, String newValue) throws IOException {
+        URL resource;
+        File file;
+
+        resource = getClass().getClassLoader().getResource("users.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+
+        file = new File(resource.getFile());
+
+        List<String> lines = new ArrayList<>();
+        boolean updated = false;
+
+        // Read the file and store its contents in a list
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                if (values.length > 0 && values[dataRequired].equals(value)) {
+                    values[data] = newValue;
+                    updated = true;
+                }
+                lines.add(String.join(",", values));
+            }
+        }
+
+        // Write the modified contents back to the file
+        if (updated) {
+            try (PrintWriter pw = new PrintWriter(new FileWriter(file))) {
+                for (String line : lines) {
+                    pw.println(line);
+                }
+            }
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -377,21 +496,20 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SendMoneyConfirmation().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel EmailAddress1;
-    private javax.swing.JLabel EmailAddress2;
+    private javax.swing.JLabel Amount;
+    private javax.swing.JButton Back;
+    private javax.swing.JButton Confirm;
     private javax.swing.JLabel EmailAddressLabel3;
     private javax.swing.JLabel EmailAddressLabel4;
     private javax.swing.JLabel EmailAddressLabel5;
     private javax.swing.JPanel LinkedAccountsPanel1;
-    private javax.swing.JLabel PhoneNumber1;
-    private javax.swing.JButton TransactionHistory;
-    private javax.swing.JButton TransactionHistory1;
+    private javax.swing.JLabel Name;
+    private javax.swing.JLabel PhoneNumber;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
