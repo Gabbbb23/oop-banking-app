@@ -52,15 +52,18 @@ public class SendMoney extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel3.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(238, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jPanel1.setBackground(new java.awt.Color(0, 204, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jButton1.setBackground(new java.awt.Color(204, 255, 204));
         jButton1.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(102, 153, 255));
+        jButton1.setForeground(new java.awt.Color(0, 153, 0));
         jButton1.setText("Send Money");
 
         jTextArea1.setColumns(20);
@@ -69,6 +72,7 @@ public class SendMoney extends javax.swing.JFrame {
         jTextArea1.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jButton4.setBackground(new java.awt.Color(255, 204, 204));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 102, 102));
         jButton4.setText("> Back");
@@ -78,7 +82,8 @@ public class SendMoney extends javax.swing.JFrame {
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel5.setBackground(new java.awt.Color(0, 0, 204));
+        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel3.setFont(new java.awt.Font("Product Sans", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,7 +106,7 @@ public class SendMoney extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setBackground(new java.awt.Color(0, 102, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         ((AbstractDocument) jTextField1.getDocument()).setDocumentFilter(new LimitedDocumentFilter(11));
@@ -111,7 +116,7 @@ public class SendMoney extends javax.swing.JFrame {
             }
         });
 
-        jPanel7.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel7.setBackground(new java.awt.Color(0, 0, 204));
         jPanel7.setForeground(new java.awt.Color(153, 153, 153));
 
         jLabel1.setFont(new java.awt.Font("Product Sans", 1, 12)); // NOI18N
@@ -156,7 +161,7 @@ public class SendMoney extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setBackground(new java.awt.Color(0, 102, 255));
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +170,7 @@ public class SendMoney extends javax.swing.JFrame {
             }
         });
 
-        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel4.setBackground(new java.awt.Color(0, 0, 102));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel5.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -189,9 +194,10 @@ public class SendMoney extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel6.setBackground(new java.awt.Color(0, 0, 204));
         jPanel6.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 204));
         jLabel2.setFont(new java.awt.Font("Product Sans", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Amount:");
@@ -384,7 +390,6 @@ public class SendMoney extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LinkedAccountsLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -393,8 +398,6 @@ public class SendMoney extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

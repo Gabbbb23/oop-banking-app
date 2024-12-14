@@ -107,12 +107,13 @@ public class Settings extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        LinkedAccountsPanel.setBackground(java.awt.Color.white);
+        LinkedAccountsPanel.setBackground(new java.awt.Color(238, 255, 255));
         LinkedAccountsPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jPanel3.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -121,7 +122,7 @@ public class Settings extends javax.swing.JFrame {
         Name.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         Name.setText("John Pork");
 
-        jPanel10.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel10.setBackground(new java.awt.Color(0, 0, 102));
 
         NameLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         NameLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -143,7 +144,7 @@ public class Settings extends javax.swing.JFrame {
                 .addComponent(NameLabel))
         );
 
-        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.setBackground(new java.awt.Color(0, 0, 102));
 
         AgeLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         AgeLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -168,7 +169,7 @@ public class Settings extends javax.swing.JFrame {
         Age.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         Age.setText("21");
 
-        jPanel21.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel21.setBackground(new java.awt.Color(0, 0, 102));
 
         BirthdayLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         BirthdayLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -193,8 +194,9 @@ public class Settings extends javax.swing.JFrame {
         Birthday.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         Birthday.setText("09/21/2005");
 
-        jPanel22.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel22.setBackground(new java.awt.Color(0, 0, 102));
 
+        NationalityLabel.setBackground(new java.awt.Color(0, 0, 102));
         NationalityLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         NationalityLabel.setForeground(new java.awt.Color(255, 255, 255));
         NationalityLabel.setText("Nationality:");
@@ -218,7 +220,7 @@ public class Settings extends javax.swing.JFrame {
         Nationality.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         Nationality.setText("Filipino");
 
-        jPanel23.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel23.setBackground(new java.awt.Color(0, 0, 102));
 
         MaritalStatusLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         MaritalStatusLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -243,7 +245,7 @@ public class Settings extends javax.swing.JFrame {
         MaritalStatus.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         MaritalStatus.setText("Widowed");
 
-        jPanel24.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel24.setBackground(new java.awt.Color(0, 0, 102));
 
         HomeAddressLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         HomeAddressLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -365,9 +367,10 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel5.setBackground(new java.awt.Color(0, 0, 204));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jPanel4.setBackground(new java.awt.Color(0, 204, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         SignOut.setBackground(new java.awt.Color(153, 0, 51));
@@ -462,11 +465,13 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel14.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel14.setBackground(new java.awt.Color(0, 0, 204));
         jPanel14.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jPanel15.setBackground(new java.awt.Color(0, 204, 255));
         jPanel15.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        LinkedAccountsLabel.setBackground(new java.awt.Color(0, 204, 255));
         LinkedAccountsLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         LinkedAccountsLabel.setText("Linked Accounts:");
 
@@ -504,10 +509,10 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        LinkedAccountsPanel1.setBackground(java.awt.Color.white);
+        LinkedAccountsPanel1.setBackground(new java.awt.Color(238, 255, 255));
         LinkedAccountsPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jPanel11.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel11.setBackground(new java.awt.Color(0, 102, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
@@ -516,7 +521,7 @@ public class Settings extends javax.swing.JFrame {
         PhoneNumber.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         PhoneNumber.setText("09132465798");
 
-        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel13.setBackground(new java.awt.Color(0, 0, 102));
 
         PhoneNumberLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         PhoneNumberLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -576,7 +581,7 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel16.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel16.setBackground(new java.awt.Color(0, 102, 255));
         jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
@@ -585,7 +590,7 @@ public class Settings extends javax.swing.JFrame {
         EmailAddress.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         EmailAddress.setText("porkjohn01@hotmail.com");
 
-        jPanel18.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel18.setBackground(new java.awt.Color(0, 0, 102));
 
         EmailAddressLabel.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         EmailAddressLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -666,9 +671,10 @@ public class Settings extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel25.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel25.setBackground(new java.awt.Color(0, 0, 204));
         jPanel25.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jPanel26.setBackground(new java.awt.Color(0, 204, 255));
         jPanel26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         PersonalInformationLabel.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N

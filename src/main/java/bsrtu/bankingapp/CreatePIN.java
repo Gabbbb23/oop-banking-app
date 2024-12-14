@@ -156,14 +156,16 @@ public class CreatePIN extends javax.swing.JFrame {
         setFocusable(false);
         setUndecorated(true);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel3.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel2.setBackground(java.awt.Color.white);
+        jPanel2.setBackground(new java.awt.Color(238, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel4.setBackground(new java.awt.Color(0, 51, 204));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         PIN1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -224,9 +226,10 @@ public class CreatePIN extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBackground(new java.awt.Color(153, 204, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jLabel1.setBackground(new java.awt.Color(153, 204, 255));
         jLabel1.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Create PIN");

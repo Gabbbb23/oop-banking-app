@@ -44,12 +44,15 @@ public class ManageCards extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel4.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel1.setBackground(java.awt.Color.white);
+        jPanel1.setBackground(new java.awt.Color(238, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton1.setBackground(new java.awt.Color(204, 255, 204));
+        jButton1.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 102, 0));
         jButton1.setText("Withdraw Money");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +61,8 @@ public class ManageCards extends javax.swing.JFrame {
         });
 
         jButton2.setBackground(new java.awt.Color(255, 255, 204));
+        jButton2.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(102, 102, 0));
         jButton2.setText("Deposit Money");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +71,8 @@ public class ManageCards extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(204, 204, 255));
+        jButton3.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(102, 0, 102));
         jButton3.setText("Add Card");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,9 +80,12 @@ public class ManageCards extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(0, 204, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel4.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        jLabel4.setBackground(new java.awt.Color(0, 204, 255));
+        jLabel4.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Your Cards");
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 153));
@@ -133,6 +143,8 @@ public class ManageCards extends javax.swing.JFrame {
         );
 
         jButton4.setBackground(new java.awt.Color(255, 204, 204));
+        jButton4.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(153, 0, 0));
         jButton4.setText("> Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
