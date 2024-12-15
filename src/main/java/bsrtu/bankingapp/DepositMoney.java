@@ -34,13 +34,13 @@ public class DepositMoney extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
         CardsPanel = new javax.swing.JPanel();
         CardsLabel = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Amount = new javax.swing.JTextField();
         CardsLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        SelectCard = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        TransactionHistory1 = new javax.swing.JButton();
-        TransactionHistory = new javax.swing.JButton();
+        Confirm = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
         jPanel31 = new javax.swing.JPanel();
         jPanel32 = new javax.swing.JPanel();
         LinkedAccountsLabel3 = new javax.swing.JLabel();
@@ -63,7 +63,7 @@ public class DepositMoney extends javax.swing.JFrame {
         CardsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CardsLabel.setText("Enter Amount");
 
-        jTextField2.setText("00.00");
+        Amount.setText("00.00");
 
         CardsLabel1.setBackground(new java.awt.Color(153, 153, 153));
         CardsLabel1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
@@ -71,7 +71,7 @@ public class DepositMoney extends javax.swing.JFrame {
         CardsLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CardsLabel1.setText("Select Card");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        SelectCard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select" }));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -96,10 +96,10 @@ public class DepositMoney extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        TransactionHistory1.setBackground(new java.awt.Color(204, 255, 204));
-        TransactionHistory1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory1.setForeground(new java.awt.Color(0, 102, 0));
-        TransactionHistory1.setText("> Confirm");
+        Confirm.setBackground(new java.awt.Color(204, 255, 204));
+        Confirm.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        Confirm.setForeground(new java.awt.Color(0, 102, 0));
+        Confirm.setText("> Confirm");
 
         javax.swing.GroupLayout CardsPanelLayout = new javax.swing.GroupLayout(CardsPanel);
         CardsPanel.setLayout(CardsPanelLayout);
@@ -108,16 +108,16 @@ public class DepositMoney extends javax.swing.JFrame {
             .addGroup(CardsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CardsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SelectCard, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(CardsPanelLayout.createSequentialGroup()
                         .addGroup(CardsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CardsPanelLayout.createSequentialGroup()
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(CardsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(TransactionHistory1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(CardsLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -128,21 +128,26 @@ public class DepositMoney extends javax.swing.JFrame {
                 .addComponent(CardsLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CardsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(CardsLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SelectCard, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TransactionHistory1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
-        TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory.setForeground(new java.awt.Color(153, 0, 0));
-        TransactionHistory.setText("> Back");
+        Back.setBackground(new java.awt.Color(255, 204, 204));
+        Back.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        Back.setForeground(new java.awt.Color(153, 0, 0));
+        Back.setText("> Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -154,7 +159,7 @@ public class DepositMoney extends javax.swing.JFrame {
                     .addComponent(CardsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(MainPanelLayout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(TransactionHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -164,7 +169,7 @@ public class DepositMoney extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(CardsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TransactionHistory)
+                .addComponent(Back)
                 .addGap(12, 12, 12))
         );
 
@@ -256,6 +261,10 @@ public class DepositMoney extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        BankingApp.switchFrame(this, new ManageCards());
+    }//GEN-LAST:event_BackMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -292,20 +301,20 @@ public class DepositMoney extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Amount;
+    private javax.swing.JButton Back;
     private javax.swing.JPanel Border;
     private javax.swing.JLabel CardsLabel;
     private javax.swing.JLabel CardsLabel1;
     private javax.swing.JPanel CardsPanel;
+    private javax.swing.JButton Confirm;
     private javax.swing.JLabel LinkedAccountsLabel3;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JButton TransactionHistory;
-    private javax.swing.JButton TransactionHistory1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> SelectCard;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
