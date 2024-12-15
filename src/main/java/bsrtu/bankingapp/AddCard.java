@@ -46,11 +46,11 @@ public class AddCard extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         BDO = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        RCBC = new javax.swing.JLabel();
+        CB = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         BPI = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        PNB = new javax.swing.JLabel();
+        SB = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -161,12 +161,12 @@ public class AddCard extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        RCBC.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        RCBC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        RCBC.setText("RCBC");
-        RCBC.addMouseListener(new java.awt.event.MouseAdapter() {
+        CB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        CB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CB.setText("CB");
+        CB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                RCBCMouseClicked(evt);
+                CBMouseClicked(evt);
             }
         });
 
@@ -176,14 +176,14 @@ public class AddCard extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(RCBC, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(CB, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(RCBC, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(CB, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -219,12 +219,12 @@ public class AddCard extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        PNB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        PNB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        PNB.setText("PNB");
-        PNB.addMouseListener(new java.awt.event.MouseAdapter() {
+        SB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        SB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SB.setText("SB");
+        SB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PNBMouseClicked(evt);
+                SBMouseClicked(evt);
             }
         });
 
@@ -234,14 +234,14 @@ public class AddCard extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PNB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PNB, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                .addComponent(SB, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -401,13 +401,13 @@ public class AddCard extends javax.swing.JFrame {
         openWebsite("https://bpi.com.ph/personal/cards/debit-cards");
     }//GEN-LAST:event_BPIMouseClicked
 
-    private void RCBCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RCBCMouseClicked
-        openWebsite("https://www.rcbc.com/mydebit");
-    }//GEN-LAST:event_RCBCMouseClicked
+    private void CBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CBMouseClicked
+        openWebsite("https://www.chinabank.ph/accounts");
+    }//GEN-LAST:event_CBMouseClicked
 
-    private void PNBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PNBMouseClicked
-        openWebsite("https://www.pnb.com.ph/index.php/pnb-debit-savings-account");
-    }//GEN-LAST:event_PNBMouseClicked
+    private void SBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SBMouseClicked
+        openWebsite("https://www.securitybank.com/personal/accounts/debit-card/");
+    }//GEN-LAST:event_SBMouseClicked
 
     private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
         BankingApp.switchFrame(this, new ManageCards());
@@ -453,13 +453,13 @@ public class AddCard extends javax.swing.JFrame {
     private javax.swing.JLabel BPI;
     private javax.swing.JButton Back;
     private javax.swing.JPanel Border;
+    private javax.swing.JLabel CB;
     private javax.swing.JLabel CardsLabel;
     private javax.swing.JPanel CardsPanel;
     private javax.swing.JLabel HSBC;
     private javax.swing.JPanel LinkedCards;
     private javax.swing.JPanel MainPanel;
-    private javax.swing.JLabel PNB;
-    private javax.swing.JLabel RCBC;
+    private javax.swing.JLabel SB;
     private javax.swing.JLabel UB;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
