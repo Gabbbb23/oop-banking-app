@@ -435,6 +435,11 @@ public class TransactionHistory extends javax.swing.JFrame {
         Back.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
         Back.setForeground(new java.awt.Color(204, 0, 0));
         Back.setText("> Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
@@ -515,6 +520,10 @@ public class TransactionHistory extends javax.swing.JFrame {
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BackActionPerformed
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        BankingApp.switchFrame(this, new AccountPage());
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments

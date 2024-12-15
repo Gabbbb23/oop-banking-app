@@ -179,7 +179,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         jPanel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         PhoneNumber.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber.setText("696969696");
+        PhoneNumber.setText("09949255202");
 
         jPanel18.setBackground(new java.awt.Color(0, 0, 204));
 

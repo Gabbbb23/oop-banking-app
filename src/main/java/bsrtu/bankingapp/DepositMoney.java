@@ -71,7 +71,7 @@ public class DepositMoney extends javax.swing.JFrame {
         CardsLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CardsLabel1.setText("Select Card");
 
-        SelectCard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        SelectCard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select" }));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());

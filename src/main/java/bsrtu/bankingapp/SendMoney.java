@@ -22,8 +22,8 @@ public class SendMoney extends javax.swing.JFrame {
      * Creates new form SendMoney
      */
     public SendMoney() {
-        this.setBackground(new Color(0,0,0,0));
         initComponents();
+        this.setBackground(new Color(0,0,0,0));
     }
 
     /**

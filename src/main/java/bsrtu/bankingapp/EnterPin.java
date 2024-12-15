@@ -88,7 +88,7 @@ public class EnterPin extends javax.swing.JFrame {
                     } else if ("AccountPage".equals(sourcePage)) {
                         pinAction = new PinAction.SettingsPinAction();
                     } else if ("EnterPINAfterClosing".equals(sourcePage)) {
-                        
+                        pinAction = new PinAction.LoginPinAction();
                     }
                     pinAction.onPinValidated();
                     dispose();
