@@ -5,6 +5,12 @@
 package bsrtu.bankingapp;
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
+import javax.swing.JOptionPane;
 import javax.swing.text.AbstractDocument;
 /**
  *
@@ -65,6 +71,11 @@ public class SendMoney extends javax.swing.JFrame {
         SendMoney.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
         SendMoney.setForeground(new java.awt.Color(0, 153, 0));
         SendMoney.setText("Send Money");
+        SendMoney.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SendMoneyMouseClicked(evt);
+            }
+        });
 
         Message.setColumns(20);
         Message.setLineWrap(true);
@@ -351,9 +362,54 @@ public class SendMoney extends javax.swing.JFrame {
     }//GEN-LAST:event_PhoneNumberActionPerformed
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
-        // TODO add your handling code here:
+        AccountPage accountPage = new AccountPage();
+        accountPage.setVisible(true);
+        accountPage.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_BackActionPerformed
 
+    private void SendMoneyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SendMoneyMouseClicked
+        try{
+            if(getUserDataFromCSV(7, PhoneNumber.getText()) == null){
+                JOptionPane.showMessageDialog(SendMoney.this, "Phone Number Does Not Exist.");
+            }
+            else if(Integer.parseInt(getUserDataFromCSV(2, PhoneNumber.getText())) < Integer.parseInt(Amount.getText())){
+                JOptionPane.showMessageDialog(SendMoney.this, "Invalid Balance");
+            }
+            else{
+                SendMoneyConfirmation SMConfirm = new SendMoneyConfirmation(PhoneNumber.getText(), "09949255152", Amount.getText());
+                SMConfirm.setVisible(true);
+                SMConfirm.setLocationRelativeTo(null);
+                dispose();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_SendMoneyMouseClicked
+    
+    private String getUserDataFromCSV(int data, String value) throws IOException {
+        URL resource;
+        File file;
+        value = PhoneNumber.getText();
+        
+        resource = getClass().getClassLoader().getResource("users.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+        
+        file = new File(resource.getFile());
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                if (values.length > 0 && values[7].equals(value)) {
+                    return values[data];
+                }
+            }
+        }
+        return null;
+    }
     /**
      * @param args the command line arguments
      */

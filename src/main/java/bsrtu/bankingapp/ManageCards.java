@@ -54,6 +54,11 @@ public class ManageCards extends javax.swing.JFrame {
         WithdrawMoney.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
         WithdrawMoney.setForeground(new java.awt.Color(0, 102, 0));
         WithdrawMoney.setText("Withdraw Money");
+        WithdrawMoney.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                WithdrawMoneyMouseClicked(evt);
+            }
+        });
         WithdrawMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 WithdrawMoneyActionPerformed(evt);
@@ -64,6 +69,11 @@ public class ManageCards extends javax.swing.JFrame {
         DepositMoney.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
         DepositMoney.setForeground(new java.awt.Color(102, 102, 0));
         DepositMoney.setText("Deposit Money");
+        DepositMoney.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DepositMoneyMouseClicked(evt);
+            }
+        });
         DepositMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DepositMoneyActionPerformed(evt);
@@ -74,6 +84,11 @@ public class ManageCards extends javax.swing.JFrame {
         AddCard.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
         AddCard.setForeground(new java.awt.Color(102, 0, 102));
         AddCard.setText("Add Card");
+        AddCard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddCardMouseClicked(evt);
+            }
+        });
         AddCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddCardActionPerformed(evt);
@@ -114,7 +129,7 @@ public class ManageCards extends javax.swing.JFrame {
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
-        SelectCard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        SelectCard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -146,6 +161,11 @@ public class ManageCards extends javax.swing.JFrame {
         Back.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
         Back.setForeground(new java.awt.Color(153, 0, 0));
         Back.setText("> Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
         Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BackActionPerformed(evt);
@@ -241,6 +261,22 @@ public class ManageCards extends javax.swing.JFrame {
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BackActionPerformed
+
+    private void WithdrawMoneyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WithdrawMoneyMouseClicked
+        BankingApp.switchFrame(this, new WithdrawMoney());
+    }//GEN-LAST:event_WithdrawMoneyMouseClicked
+
+    private void DepositMoneyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DepositMoneyMouseClicked
+        BankingApp.switchFrame(this, new DepositMoney());
+    }//GEN-LAST:event_DepositMoneyMouseClicked
+
+    private void AddCardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddCardMouseClicked
+        BankingApp.switchFrame(this, new AddCard());
+    }//GEN-LAST:event_AddCardMouseClicked
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        BankingApp.switchFrame(this, new AccountPage());
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments

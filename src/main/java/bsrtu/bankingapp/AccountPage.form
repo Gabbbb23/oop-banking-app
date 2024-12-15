@@ -225,6 +225,7 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ManageCardsMouseClicked"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ManageCardsActionPerformed"/>
                       </Events>
                     </Component>
@@ -295,6 +296,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Transaction History"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TransactionHistoryMouseClicked"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JPanel" name="BalanceBackground">
               <Properties>
@@ -439,6 +443,7 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="TransferMoneyMouseClicked"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TransferMoneyActionPerformed"/>
                       </Events>
                     </Component>

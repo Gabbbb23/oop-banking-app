@@ -463,7 +463,6 @@ public class CreateAccount extends javax.swing.JFrame {
 
         MaritalStatusButtons.add(ButtonSingle);
         ButtonSingle.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        ButtonSingle.setForeground(new java.awt.Color(255, 255, 255));
         ButtonSingle.setText("Single");
         ButtonSingle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ButtonSingle.addActionListener(new java.awt.event.ActionListener() {
@@ -474,7 +473,6 @@ public class CreateAccount extends javax.swing.JFrame {
 
         MaritalStatusButtons.add(ButtonMarried);
         ButtonMarried.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        ButtonMarried.setForeground(new java.awt.Color(255, 255, 255));
         ButtonMarried.setText("Married");
         ButtonMarried.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ButtonMarried.addActionListener(new java.awt.event.ActionListener() {
@@ -485,7 +483,6 @@ public class CreateAccount extends javax.swing.JFrame {
 
         MaritalStatusButtons.add(ButtonWidowed);
         ButtonWidowed.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        ButtonWidowed.setForeground(new java.awt.Color(255, 255, 255));
         ButtonWidowed.setText("Widowed");
         ButtonWidowed.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 

@@ -5,6 +5,11 @@
 package bsrtu.bankingapp;
 
 import java.awt.Color;
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -75,6 +80,11 @@ public class AddCard extends javax.swing.JFrame {
         UB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         UB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         UB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/UnionBank.png"))); // NOI18N
+        UB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UBMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -99,6 +109,11 @@ public class AddCard extends javax.swing.JFrame {
         HSBC.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         HSBC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HSBC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/HSBC.png"))); // NOI18N
+        HSBC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HSBCMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -123,6 +138,11 @@ public class AddCard extends javax.swing.JFrame {
         BDO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BDO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BDO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BDO.png"))); // NOI18N
+        BDO.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BDOMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -147,6 +167,11 @@ public class AddCard extends javax.swing.JFrame {
         CB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         CB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ChinaBank.png"))); // NOI18N
+        CB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CBMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -171,6 +196,11 @@ public class AddCard extends javax.swing.JFrame {
         BPI.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BPI.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BPI.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BPI.png"))); // NOI18N
+        BPI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BPIMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -195,6 +225,11 @@ public class AddCard extends javax.swing.JFrame {
         SB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         SB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SecurityBank.png"))); // NOI18N
+        SB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SBMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -274,6 +309,11 @@ public class AddCard extends javax.swing.JFrame {
         Back.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         Back.setForeground(new java.awt.Color(0, 51, 51));
         Back.setText("> Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -332,6 +372,48 @@ public class AddCard extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void openWebsite(String url) {
+        if (Desktop.isDesktopSupported()) {
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.browse(new URI(url));
+            } catch (IOException | URISyntaxException ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Failed to open the website: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Desktop is not supported on this platform.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    private void BDOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BDOMouseClicked
+        openWebsite("https://www.bdo.com.ph/personal");
+    }//GEN-LAST:event_BDOMouseClicked
+
+    private void UBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UBMouseClicked
+        openWebsite("https://www.unionbankph.com/cards/debit-card");
+    }//GEN-LAST:event_UBMouseClicked
+
+    private void HSBCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HSBCMouseClicked
+        openWebsite("https://www.hsbc.com.ph/accounts/products/peso/");
+    }//GEN-LAST:event_HSBCMouseClicked
+
+    private void BPIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BPIMouseClicked
+        openWebsite("https://bpi.com.ph/personal/cards/debit-cards");
+    }//GEN-LAST:event_BPIMouseClicked
+
+    private void CBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CBMouseClicked
+        openWebsite("https://www.chinabank.ph/accounts");
+    }//GEN-LAST:event_CBMouseClicked
+
+    private void SBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SBMouseClicked
+        openWebsite("https://www.securitybank.com/personal/accounts/debit-card/");
+    }//GEN-LAST:event_SBMouseClicked
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        BankingApp.switchFrame(this, new ManageCards());
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,16 @@
 package bsrtu.bankingapp;
 
 import java.awt.Color;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,10 +24,26 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
 
     /**
      * Creates new form TransferMoney
+     * @param phoneNumber
+     * @param amount
+     * @param name
      */
-    public SendMoneyConfirmation() {
-        initComponents();
-        this.setBackground(new Color(0,0,0,0));
+    private String phoneNumber;
+    private String ownPhoneNumber;
+    
+    public SendMoneyConfirmation(String phoneNumber, String ownPhoneNumber, String amount) {
+        try{
+            initComponents();
+            this.phoneNumber = phoneNumber;
+            this.ownPhoneNumber = ownPhoneNumber;
+            Name.setText(getUserDataFromCSV(3, 7, this.phoneNumber));
+            PhoneNumber.setText(phoneNumber);
+            Amount.setText("$"+amount);
+            this.setBackground(new Color(0,0,0,0));
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -58,11 +84,21 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         Back.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         Back.setForeground(new java.awt.Color(153, 0, 0));
         Back.setText("> Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
 
         Confirm.setBackground(new java.awt.Color(204, 255, 204));
         Confirm.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         Confirm.setForeground(new java.awt.Color(0, 102, 51));
         Confirm.setText("> Confirm");
+        Confirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConfirmMouseClicked(evt);
+            }
+        });
 
         LinkedAccountsPanel1.setBackground(new java.awt.Color(238, 255, 255));
         LinkedAccountsPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -348,6 +384,89 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void ConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConfirmMouseClicked
+        try {
+            String newBalance = "50";
+            updateUserDataInCSV(2, 7, this.ownPhoneNumber, newBalance);
+            newBalance = "100";
+            updateUserDataInCSV(2, 7, this.phoneNumber, newBalance);
+            JOptionPane.showMessageDialog(SendMoneyConfirmation.this, "Money Sent Successfully.");
+            AccountPage accountPage = new AccountPage();
+            accountPage.setVisible(true);
+            accountPage.setLocationRelativeTo(null);
+            dispose();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_ConfirmMouseClicked
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        SendMoney sendMoney = new SendMoney();
+        sendMoney.setVisible(true);
+        sendMoney.setLocationRelativeTo(null);
+        dispose();
+    }//GEN-LAST:event_BackMouseClicked
+    
+    private String getUserDataFromCSV(int data, int dataRequired, String value) throws IOException {
+        URL resource;
+        File file;
+        
+        resource = getClass().getClassLoader().getResource("users.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+        
+        file = new File(resource.getFile());
+
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                if (values.length > 0 && values[dataRequired].equals(value)) {
+                    return values[data];
+                }
+            }
+        }
+        return null;
+    }
+    
+    private void updateUserDataInCSV(int data, int dataRequired, String value, String newValue) throws IOException {
+        URL resource;
+        File file;
+
+        resource = getClass().getClassLoader().getResource("users.csv");
+        if (resource == null) {
+            throw new IOException("CSV file not found");
+        }
+
+        file = new File(resource.getFile());
+
+        List<String> lines = new ArrayList<>();
+        boolean updated = false;
+
+        // Read the file and store its contents in a list
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                if (values.length > 0 && values[dataRequired].equals(value)) {
+                    values[data] = newValue;
+                    updated = true;
+                }
+                lines.add(String.join(",", values));
+            }
+        }
+
+        // Write the modified contents back to the file
+        if (updated) {
+            try (PrintWriter pw = new PrintWriter(new FileWriter(file))) {
+                for (String line : lines) {
+                    pw.println(line);
+                }
+            }
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -379,7 +498,6 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SendMoneyConfirmation().setVisible(true);
             }
         });
     }

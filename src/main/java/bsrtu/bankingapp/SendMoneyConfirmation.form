@@ -99,6 +99,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&gt; Back"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Confirm">
           <Properties>
@@ -113,6 +116,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="&gt; Confirm"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConfirmMouseClicked"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JPanel" name="LinkedAccountsPanel1">
           <Properties>

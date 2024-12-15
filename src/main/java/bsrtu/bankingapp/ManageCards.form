@@ -149,6 +149,7 @@
                 <Property name="text" type="java.lang.String" value="Withdraw Money"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="WithdrawMoneyMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="WithdrawMoneyActionPerformed"/>
               </Events>
             </Component>
@@ -166,6 +167,7 @@
                 <Property name="text" type="java.lang.String" value="Deposit Money"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="DepositMoneyMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DepositMoneyActionPerformed"/>
               </Events>
             </Component>
@@ -183,6 +185,7 @@
                 <Property name="text" type="java.lang.String" value="Add Card"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AddCardMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddCardActionPerformed"/>
               </Events>
             </Component>
@@ -298,11 +301,8 @@
                 <Component class="javax.swing.JComboBox" name="SelectCard">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                      <StringArray count="1">
+                        <StringItem index="0" value="Select"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -326,6 +326,7 @@
                 <Property name="text" type="java.lang.String" value="&gt; Back"/>
               </Properties>
               <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackActionPerformed"/>
               </Events>
             </Component>

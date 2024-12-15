@@ -201,7 +201,7 @@ public class TransactionHistory extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         PhoneNumber.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber.setText("09/21/2005");
+        PhoneNumber.setText("12/03/2024");
 
         jPanel10.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -248,7 +248,7 @@ public class TransactionHistory extends javax.swing.JFrame {
         );
 
         PhoneNumber2.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber2.setText("₱10.00");
+        PhoneNumber2.setText("$10.00");
 
         jPanel21.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -298,7 +298,7 @@ public class TransactionHistory extends javax.swing.JFrame {
         );
 
         PhoneNumber4.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber4.setText("Susy Beef");
+        PhoneNumber4.setText("Gab");
 
         jPanel23.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -323,7 +323,7 @@ public class TransactionHistory extends javax.swing.JFrame {
         );
 
         PhoneNumber5.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber5.setText("ur mom gay");
+        PhoneNumber5.setText("Here is 10 dollars.");
 
         jPanel24.setBackground(new java.awt.Color(204, 204, 204));
 

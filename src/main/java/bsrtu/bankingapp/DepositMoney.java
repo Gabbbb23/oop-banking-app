@@ -143,6 +143,11 @@ public class DepositMoney extends javax.swing.JFrame {
         Back.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
         Back.setForeground(new java.awt.Color(153, 0, 0));
         Back.setText("> Back");
+        Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
         MainPanel.setLayout(MainPanelLayout);
@@ -255,6 +260,10 @@ public class DepositMoney extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackMouseClicked
+        BankingApp.switchFrame(this, new ManageCards());
+    }//GEN-LAST:event_BackMouseClicked
 
     /**
      * @param args the command line arguments
