@@ -31,15 +31,15 @@ public class ManageCards extends javax.swing.JFrame {
 
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        WithdrawMoney = new javax.swing.JButton();
+        DepositMoney = new javax.swing.JButton();
+        AddCard = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton4 = new javax.swing.JButton();
+        SelectCard = new javax.swing.JComboBox<>();
+        Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -50,33 +50,33 @@ public class ManageCards extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(238, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setBackground(new java.awt.Color(204, 255, 204));
-        jButton1.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 0));
-        jButton1.setText("Withdraw Money");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        WithdrawMoney.setBackground(new java.awt.Color(204, 255, 204));
+        WithdrawMoney.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
+        WithdrawMoney.setForeground(new java.awt.Color(0, 102, 0));
+        WithdrawMoney.setText("Withdraw Money");
+        WithdrawMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                WithdrawMoneyActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 204));
-        jButton2.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(102, 102, 0));
-        jButton2.setText("Deposit Money");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        DepositMoney.setBackground(new java.awt.Color(255, 255, 204));
+        DepositMoney.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
+        DepositMoney.setForeground(new java.awt.Color(102, 102, 0));
+        DepositMoney.setText("Deposit Money");
+        DepositMoney.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                DepositMoneyActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(204, 204, 255));
-        jButton3.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(102, 0, 102));
-        jButton3.setText("Add Card");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        AddCard.setBackground(new java.awt.Color(204, 204, 255));
+        AddCard.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
+        AddCard.setForeground(new java.awt.Color(102, 0, 102));
+        AddCard.setText("Add Card");
+        AddCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                AddCardActionPerformed(evt);
             }
         });
 
@@ -114,7 +114,7 @@ public class ManageCards extends javax.swing.JFrame {
                 .addContainerGap(70, Short.MAX_VALUE))
         );
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        SelectCard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -127,7 +127,7 @@ public class ManageCards extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox1, 0, 90, Short.MAX_VALUE)))
+                        .addComponent(SelectCard, 0, 90, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -136,19 +136,19 @@ public class ManageCards extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SelectCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jButton4.setBackground(new java.awt.Color(255, 204, 204));
-        jButton4.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(153, 0, 0));
-        jButton4.setText("> Back");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        Back.setBackground(new java.awt.Color(255, 204, 204));
+        Back.setFont(new java.awt.Font("Product Sans", 0, 12)); // NOI18N
+        Back.setForeground(new java.awt.Color(153, 0, 0));
+        Back.setText("> Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                BackActionPerformed(evt);
             }
         });
 
@@ -160,16 +160,16 @@ public class ManageCards extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(WithdrawMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(DepositMoney, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(AddCard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4)))
+                                .addComponent(Back)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -178,14 +178,14 @@ public class ManageCards extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(WithdrawMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DepositMoney, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AddCard, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -226,21 +226,21 @@ public class ManageCards extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void WithdrawMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WithdrawMoneyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_WithdrawMoneyActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void DepositMoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DepositMoneyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_DepositMoneyActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void AddCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddCardActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_AddCardActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_BackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,11 +278,11 @@ public class ManageCards extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton AddCard;
+    private javax.swing.JButton Back;
+    private javax.swing.JButton DepositMoney;
+    private javax.swing.JComboBox<String> SelectCard;
+    private javax.swing.JButton WithdrawMoney;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;

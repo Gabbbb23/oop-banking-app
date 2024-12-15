@@ -61,9 +61,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="LinkedAccountsPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="TransactionHistory1" max="32767" attributes="0"/>
+                          <Component id="Confirm" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="TransactionHistory" min="-2" max="-2" attributes="0"/>
+                          <Component id="Back" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -77,8 +77,8 @@
                   <Component id="LinkedAccountsPanel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="TransactionHistory" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="TransactionHistory1" max="32767" attributes="0"/>
+                      <Component id="Back" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="Confirm" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -86,7 +86,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="TransactionHistory">
+        <Component class="javax.swing.JButton" name="Back">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -100,7 +100,7 @@
             <Property name="text" type="java.lang.String" value="&gt; Back"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="TransactionHistory1">
+        <Component class="javax.swing.JButton" name="Confirm">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="ff" red="cc" type="rgb"/>
@@ -212,7 +212,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="PhoneNumber1" max="32767" attributes="0"/>
+                              <Component id="Name" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -223,7 +223,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jPanel13" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="PhoneNumber1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Name" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -231,7 +231,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="PhoneNumber1">
+                    <Component class="javax.swing.JLabel" name="Name">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -335,7 +335,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel18" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EmailAddress1" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="PhoneNumber" min="-2" pref="114" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -346,7 +346,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jPanel18" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddress1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="PhoneNumber" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -354,7 +354,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EmailAddress1">
+                    <Component class="javax.swing.JLabel" name="PhoneNumber">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>
@@ -458,7 +458,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel21" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="EmailAddress2" min="-2" pref="158" max="-2" attributes="0"/>
+                              <Component id="Amount" min="-2" pref="158" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -469,7 +469,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jPanel21" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="EmailAddress2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Amount" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -477,7 +477,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JLabel" name="EmailAddress2">
+                    <Component class="javax.swing.JLabel" name="Amount">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Product Sans" size="13" style="0"/>

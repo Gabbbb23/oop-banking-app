@@ -60,7 +60,7 @@ public class TransactionHistory extends javax.swing.JFrame {
         EmailAddressLabel9 = new javax.swing.JLabel();
         PhoneNumber5 = new javax.swing.JLabel();
         jPanel24 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
 
         jLabel6.setText("Back");
 
@@ -431,13 +431,13 @@ public class TransactionHistory extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton6.setBackground(new java.awt.Color(255, 204, 204));
-        jButton6.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(204, 0, 0));
-        jButton6.setText("> Back");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        Back.setBackground(new java.awt.Color(255, 204, 204));
+        Back.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        Back.setForeground(new java.awt.Color(204, 0, 0));
+        Back.setText("> Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                BackActionPerformed(evt);
             }
         });
 
@@ -460,7 +460,7 @@ public class TransactionHistory extends javax.swing.JFrame {
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
@@ -479,7 +479,7 @@ public class TransactionHistory extends javax.swing.JFrame {
                 .addComponent(LinkedAccountsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -512,9 +512,9 @@ public class TransactionHistory extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_BackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -552,6 +552,7 @@ public class TransactionHistory extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JLabel EmailAddressLabel2;
     private javax.swing.JLabel EmailAddressLabel5;
     private javax.swing.JLabel EmailAddressLabel7;
@@ -566,7 +567,6 @@ public class TransactionHistory extends javax.swing.JFrame {
     private javax.swing.JLabel PhoneNumber5;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

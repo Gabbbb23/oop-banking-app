@@ -30,22 +30,22 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        TransactionHistory = new javax.swing.JButton();
-        TransactionHistory1 = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
+        Confirm = new javax.swing.JButton();
         LinkedAccountsPanel1 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
-        PhoneNumber1 = new javax.swing.JLabel();
+        Name = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         EmailAddressLabel3 = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
-        EmailAddress1 = new javax.swing.JLabel();
+        PhoneNumber = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         EmailAddressLabel4 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
         jPanel20 = new javax.swing.JPanel();
-        EmailAddress2 = new javax.swing.JLabel();
+        Amount = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         EmailAddressLabel5 = new javax.swing.JLabel();
 
@@ -54,15 +54,15 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
-        TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory.setForeground(new java.awt.Color(153, 0, 0));
-        TransactionHistory.setText("> Back");
+        Back.setBackground(new java.awt.Color(255, 204, 204));
+        Back.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        Back.setForeground(new java.awt.Color(153, 0, 0));
+        Back.setText("> Back");
 
-        TransactionHistory1.setBackground(new java.awt.Color(204, 255, 204));
-        TransactionHistory1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory1.setForeground(new java.awt.Color(0, 102, 51));
-        TransactionHistory1.setText("> Confirm");
+        Confirm.setBackground(new java.awt.Color(204, 255, 204));
+        Confirm.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        Confirm.setForeground(new java.awt.Color(0, 102, 51));
+        Confirm.setText("> Confirm");
 
         LinkedAccountsPanel1.setBackground(new java.awt.Color(238, 255, 255));
         LinkedAccountsPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -73,8 +73,8 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
         jPanel12.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        PhoneNumber1.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        PhoneNumber1.setText("John Pork");
+        Name.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Name.setText("John Pork");
 
         jPanel13.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -106,7 +106,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(PhoneNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -115,7 +115,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PhoneNumber1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -142,8 +142,8 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        EmailAddress1.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        EmailAddress1.setText("696969696");
+        PhoneNumber.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        PhoneNumber.setText("696969696");
 
         jPanel18.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -175,7 +175,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -184,7 +184,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EmailAddress1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PhoneNumber, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -211,8 +211,8 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
         jPanel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        EmailAddress2.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        EmailAddress2.setText("$10.00");
+        Amount.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        Amount.setText("$10.00");
 
         jPanel21.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -245,7 +245,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EmailAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Amount, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
@@ -254,7 +254,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EmailAddress2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Amount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -311,9 +311,9 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LinkedAccountsPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(TransactionHistory1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TransactionHistory)))
+                        .addComponent(Back)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -323,8 +323,8 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addComponent(LinkedAccountsPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TransactionHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TransactionHistory1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -385,15 +385,15 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel EmailAddress1;
-    private javax.swing.JLabel EmailAddress2;
+    private javax.swing.JLabel Amount;
+    private javax.swing.JButton Back;
+    private javax.swing.JButton Confirm;
     private javax.swing.JLabel EmailAddressLabel3;
     private javax.swing.JLabel EmailAddressLabel4;
     private javax.swing.JLabel EmailAddressLabel5;
     private javax.swing.JPanel LinkedAccountsPanel1;
-    private javax.swing.JLabel PhoneNumber1;
-    private javax.swing.JButton TransactionHistory;
-    private javax.swing.JButton TransactionHistory1;
+    private javax.swing.JLabel Name;
+    private javax.swing.JLabel PhoneNumber;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
