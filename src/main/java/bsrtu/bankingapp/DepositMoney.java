@@ -29,6 +29,7 @@ public class DepositMoney extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollBar1 = new javax.swing.JScrollBar();
         Border = new javax.swing.JPanel();
         MainPanel = new javax.swing.JPanel();
         CardsPanel = new javax.swing.JPanel();
@@ -47,15 +48,18 @@ public class DepositMoney extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        Border.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Border.setBackground(new java.awt.Color(153, 204, 255));
+        Border.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        MainPanel.setBackground(new java.awt.Color(255, 255, 255));
+        MainPanel.setBackground(new java.awt.Color(238, 255, 255));
         MainPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        CardsPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        CardsPanel.setBackground(new java.awt.Color(0, 204, 255));
+        CardsPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 255), 4, true));
 
         CardsLabel.setBackground(new java.awt.Color(153, 153, 153));
         CardsLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        CardsLabel.setForeground(new java.awt.Color(255, 255, 255));
         CardsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CardsLabel.setText("Enter Amount");
 
@@ -63,12 +67,13 @@ public class DepositMoney extends javax.swing.JFrame {
 
         CardsLabel1.setBackground(new java.awt.Color(153, 153, 153));
         CardsLabel1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        CardsLabel1.setForeground(new java.awt.Color(255, 255, 255));
         CardsLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CardsLabel1.setText("Select Card");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 1, 18)); // NOI18N
@@ -93,7 +98,7 @@ public class DepositMoney extends javax.swing.JFrame {
 
         TransactionHistory1.setBackground(new java.awt.Color(204, 255, 204));
         TransactionHistory1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory1.setForeground(new java.awt.Color(0, 51, 51));
+        TransactionHistory1.setForeground(new java.awt.Color(0, 102, 0));
         TransactionHistory1.setText("> Confirm");
 
         javax.swing.GroupLayout CardsPanelLayout = new javax.swing.GroupLayout(CardsPanel);
@@ -136,7 +141,7 @@ public class DepositMoney extends javax.swing.JFrame {
 
         TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
         TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory.setForeground(new java.awt.Color(0, 51, 51));
+        TransactionHistory.setForeground(new java.awt.Color(153, 0, 0));
         TransactionHistory.setText("> Back");
 
         javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
@@ -163,12 +168,14 @@ public class DepositMoney extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
-        jPanel31.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel31.setBackground(new java.awt.Color(0, 102, 255));
         jPanel31.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jPanel32.setBackground(new java.awt.Color(0, 204, 255));
         jPanel32.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        LinkedAccountsLabel3.setFont(new java.awt.Font("Product Sans", 0, 18)); // NOI18N
+        LinkedAccountsLabel3.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        LinkedAccountsLabel3.setForeground(new java.awt.Color(255, 255, 255));
         LinkedAccountsLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LinkedAccountsLabel3.setText("Deposit Money");
 
@@ -298,6 +305,7 @@ public class DepositMoney extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel32;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

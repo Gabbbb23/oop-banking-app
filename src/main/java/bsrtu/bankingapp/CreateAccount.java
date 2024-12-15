@@ -42,6 +42,7 @@ public class CreateAccount extends javax.swing.JFrame {
     private void initComponents() {
 
         MaritalStatusButtons = new javax.swing.ButtonGroup();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
         Border1 = new javax.swing.JPanel();
         Border2 = new javax.swing.JPanel();
         Header = new javax.swing.JPanel();
@@ -75,21 +76,24 @@ public class CreateAccount extends javax.swing.JFrame {
         ButtonWidowed = new javax.swing.JRadioButton();
         SignIn = new javax.swing.JButton();
         LogIn = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setResizable(false);
 
-        Border1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Border1.setBackground(new java.awt.Color(0, 153, 255));
+        Border1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        Border2.setBackground(new java.awt.Color(255, 255, 255));
+        Border2.setBackground(new java.awt.Color(238, 255, 255));
         Border2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        Header.setBackground(new java.awt.Color(102, 153, 255));
-        Header.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Header.setBackground(new java.awt.Color(255, 255, 204));
+        Header.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 51), 4, true));
 
-        CreateAccount.setBackground(new java.awt.Color(102, 153, 255));
+        CreateAccount.setBackground(new java.awt.Color(255, 255, 204));
         CreateAccount.setFont(new java.awt.Font("Product Sans", 1, 18)); // NOI18N
+        CreateAccount.setForeground(new java.awt.Color(255, 153, 0));
         CreateAccount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         CreateAccount.setText("Create Account");
 
@@ -98,19 +102,20 @@ public class CreateAccount extends javax.swing.JFrame {
         HeaderLayout.setHorizontalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CreateAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(CreateAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         HeaderLayout.setVerticalGroup(
             HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HeaderLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(HeaderLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(CreateAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Panel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Panel1.setBackground(new java.awt.Color(0, 0, 204));
+        Panel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 4, true));
 
         ((AbstractDocument) Username.getDocument()).setDocumentFilter(new MaxLengthDocumentFilter(14));
         Username.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
@@ -136,12 +141,14 @@ public class CreateAccount extends javax.swing.JFrame {
         });
 
         UsernameLabel.setBackground(new java.awt.Color(153, 153, 153));
-        UsernameLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        UsernameLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        UsernameLabel.setForeground(new java.awt.Color(255, 255, 255));
         UsernameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         UsernameLabel.setText("Username (14 Characters) :");
 
         UsernameLabel1.setBackground(new java.awt.Color(153, 153, 153));
-        UsernameLabel1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        UsernameLabel1.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        UsernameLabel1.setForeground(new java.awt.Color(255, 255, 255));
         UsernameLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         UsernameLabel1.setText("Password:");
 
@@ -182,7 +189,8 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Panel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Panel2.setBackground(new java.awt.Color(0, 0, 204));
+        Panel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 4, true));
 
         ((AbstractDocument) Age.getDocument()).setDocumentFilter(new LimitedDocumentFilter(2));
         Age.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
@@ -231,12 +239,14 @@ public class CreateAccount extends javax.swing.JFrame {
         });
 
         AgeLabel.setBackground(new java.awt.Color(153, 153, 153));
-        AgeLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        AgeLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        AgeLabel.setForeground(new java.awt.Color(255, 255, 255));
         AgeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         AgeLabel.setText("Age : ");
 
         NationalityLabel.setBackground(new java.awt.Color(153, 153, 153));
-        NationalityLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        NationalityLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        NationalityLabel.setForeground(new java.awt.Color(255, 255, 255));
         NationalityLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         NationalityLabel.setText("Nationality : ");
 
@@ -246,6 +256,7 @@ public class CreateAccount extends javax.swing.JFrame {
         BirthdayMonth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         BirthdayMonth.setMaximumRowCount(10);
         BirthdayMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        BirthdayMonth.setToolTipText("");
         BirthdayMonth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BirthdayMonthActionPerformed(evt);
@@ -285,17 +296,20 @@ public class CreateAccount extends javax.swing.JFrame {
         });
 
         PhoneNumberLabel.setBackground(new java.awt.Color(153, 153, 153));
-        PhoneNumberLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        PhoneNumberLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        PhoneNumberLabel.setForeground(new java.awt.Color(255, 255, 255));
         PhoneNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         PhoneNumberLabel.setText("Phone Number (11 Digit):");
 
         BirthdayLabel.setBackground(new java.awt.Color(153, 153, 153));
-        BirthdayLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        BirthdayLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        BirthdayLabel.setForeground(new java.awt.Color(255, 255, 255));
         BirthdayLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         BirthdayLabel.setText("Birthdate (MM/DD/YY) : ");
 
         FullNameLabel.setBackground(new java.awt.Color(153, 153, 153));
-        FullNameLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        FullNameLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        FullNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         FullNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         FullNameLabel.setText("Full Name (Last Name, First Name M.I.) :");
 
@@ -382,7 +396,8 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Panel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        Panel3.setBackground(new java.awt.Color(0, 0, 204));
+        Panel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 4, true));
 
         EmailAddress.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         EmailAddress.setForeground(new java.awt.Color(153, 153, 153));
@@ -429,22 +444,26 @@ public class CreateAccount extends javax.swing.JFrame {
         });
 
         EmailAddressLabel.setBackground(new java.awt.Color(153, 153, 153));
-        EmailAddressLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        EmailAddressLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        EmailAddressLabel.setForeground(new java.awt.Color(255, 255, 255));
         EmailAddressLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         EmailAddressLabel.setText("E-Mail Address :");
 
         HomeAddressLabel.setBackground(new java.awt.Color(153, 153, 153));
-        HomeAddressLabel.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
+        HomeAddressLabel.setFont(new java.awt.Font("Product Sans", 1, 14)); // NOI18N
+        HomeAddressLabel.setForeground(new java.awt.Color(255, 255, 255));
         HomeAddressLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         HomeAddressLabel.setText("Home Address :");
 
         MaritalStatusLabel.setBackground(new java.awt.Color(153, 153, 153));
-        MaritalStatusLabel.setFont(new java.awt.Font("Product Sans", 0, 15)); // NOI18N
+        MaritalStatusLabel.setFont(new java.awt.Font("Product Sans", 1, 15)); // NOI18N
+        MaritalStatusLabel.setForeground(new java.awt.Color(255, 255, 255));
         MaritalStatusLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MaritalStatusLabel.setText("Marital Status :");
 
         MaritalStatusButtons.add(ButtonSingle);
         ButtonSingle.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        ButtonSingle.setForeground(new java.awt.Color(255, 255, 255));
         ButtonSingle.setText("Single");
         ButtonSingle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ButtonSingle.addActionListener(new java.awt.event.ActionListener() {
@@ -455,6 +474,7 @@ public class CreateAccount extends javax.swing.JFrame {
 
         MaritalStatusButtons.add(ButtonMarried);
         ButtonMarried.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        ButtonMarried.setForeground(new java.awt.Color(255, 255, 255));
         ButtonMarried.setText("Married");
         ButtonMarried.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ButtonMarried.addActionListener(new java.awt.event.ActionListener() {
@@ -465,6 +485,7 @@ public class CreateAccount extends javax.swing.JFrame {
 
         MaritalStatusButtons.add(ButtonWidowed);
         ButtonWidowed.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
+        ButtonWidowed.setForeground(new java.awt.Color(255, 255, 255));
         ButtonWidowed.setText("Widowed");
         ButtonWidowed.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
@@ -511,8 +532,8 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        SignIn.setBackground(new java.awt.Color(204, 255, 255));
-        SignIn.setFont(new java.awt.Font("Product Sans", 0, 16)); // NOI18N
+        SignIn.setBackground(new java.awt.Color(153, 204, 255));
+        SignIn.setFont(new java.awt.Font("Product Sans", 1, 16)); // NOI18N
         SignIn.setForeground(new java.awt.Color(0, 51, 51));
         SignIn.setText("Sign In");
         SignIn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -537,6 +558,10 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Registration.png"))); // NOI18N
+        jLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 102), 4, true));
+
         javax.swing.GroupLayout Border2Layout = new javax.swing.GroupLayout(Border2);
         Border2.setLayout(Border2Layout);
         Border2Layout.setHorizontalGroup(
@@ -546,33 +571,38 @@ public class CreateAccount extends javax.swing.JFrame {
                     .addGroup(Border2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(LogIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Panel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(LogIn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(Border2Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(SignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(Border2Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(SignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Border2Layout.setVerticalGroup(
             Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Border2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(LogIn)
+                .addGroup(Border2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Border2Layout.createSequentialGroup()
+                        .addComponent(Panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Panel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Panel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SignIn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LogIn))
+                    .addGroup(Border2Layout.createSequentialGroup()
+                        .addComponent(Header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -1041,5 +1071,7 @@ public class CreateAccount extends javax.swing.JFrame {
     private javax.swing.JTextField Username;
     private javax.swing.JLabel UsernameLabel;
     private javax.swing.JLabel UsernameLabel1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
     // End of variables declaration//GEN-END:variables
 }

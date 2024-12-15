@@ -51,22 +51,23 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         TransactionHistory.setBackground(new java.awt.Color(255, 204, 204));
         TransactionHistory.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory.setForeground(new java.awt.Color(0, 51, 51));
+        TransactionHistory.setForeground(new java.awt.Color(153, 0, 0));
         TransactionHistory.setText("> Back");
 
         TransactionHistory1.setBackground(new java.awt.Color(204, 255, 204));
         TransactionHistory1.setFont(new java.awt.Font("Product Sans", 0, 14)); // NOI18N
-        TransactionHistory1.setForeground(new java.awt.Color(0, 51, 51));
+        TransactionHistory1.setForeground(new java.awt.Color(0, 102, 51));
         TransactionHistory1.setText("> Confirm");
 
-        LinkedAccountsPanel1.setBackground(java.awt.Color.white);
+        LinkedAccountsPanel1.setBackground(new java.awt.Color(238, 255, 255));
         LinkedAccountsPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jPanel11.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel11.setBackground(new java.awt.Color(0, 102, 255));
         jPanel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jPanel12.setBackground(new java.awt.Color(255, 255, 255));
@@ -75,7 +76,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         PhoneNumber1.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         PhoneNumber1.setText("John Pork");
 
-        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel13.setBackground(new java.awt.Color(0, 0, 204));
 
         EmailAddressLabel3.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         EmailAddressLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,7 +136,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel16.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel16.setBackground(new java.awt.Color(0, 102, 255));
         jPanel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
@@ -144,7 +145,7 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
         EmailAddress1.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
         EmailAddress1.setText("696969696");
 
-        jPanel18.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel18.setBackground(new java.awt.Color(0, 0, 204));
 
         EmailAddressLabel4.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         EmailAddressLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,17 +205,18 @@ public class SendMoneyConfirmation extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.setBackground(new java.awt.Color(0, 102, 255));
         jPanel19.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
         jPanel20.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         EmailAddress2.setFont(new java.awt.Font("Product Sans", 0, 13)); // NOI18N
-        EmailAddress2.setText("₱10.00");
+        EmailAddress2.setText("$10.00");
 
-        jPanel21.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel21.setBackground(new java.awt.Color(0, 0, 204));
 
+        EmailAddressLabel5.setBackground(new java.awt.Color(0, 0, 204));
         EmailAddressLabel5.setFont(new java.awt.Font("Product Sans", 1, 13)); // NOI18N
         EmailAddressLabel5.setForeground(new java.awt.Color(255, 255, 255));
         EmailAddressLabel5.setText("Amount:");
