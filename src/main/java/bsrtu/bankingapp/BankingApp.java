@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.net.URISyntaxException;
 import javax.swing.JOptionPane;
 
 public class BankingApp {
@@ -30,8 +31,12 @@ public class BankingApp {
         if (resource == null) {
             throw new IOException("CSV file not found");
         }
-        File file = new File(resource.getFile());
-        return !isCSVFileEmpty(file);
+        try {
+            File file = new File(resource.toURI());
+            return !isCSVFileEmpty(file);
+        } catch (URISyntaxException e) {
+            throw new IOException("Invalid resource URI", e);
+        }
     }
 
     private boolean isCSVFileEmpty(File file) throws IOException {
@@ -46,7 +51,12 @@ public class BankingApp {
             if (resource == null) {
                 throw new IOException("CSV file not found");
             }
-            File file = new File(resource.getFile());
+            File file;
+            try {
+                file = new File(resource.toURI());
+            } catch (URISyntaxException e) {
+                throw new IOException("Invalid resource URI", e);
+            }
 
             boolean isEmpty;
             String value = null;
